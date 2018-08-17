@@ -73,7 +73,7 @@
   * Elastic Load Balancer
   * Multiple Availability Zone
 #### What amount of temp space is allocated to you when using lambda function per invocation
-  * 512 MB
+  * 512 MB (Ephemeral disk capacity/ temp space)
 #### Requirement to create a subnet in an AWS VPC which will host around 20 hosts. This subnet will be used to host web servers.
   * 10.0.1.0/27
   * The availabe IP addresses for this CIDR block is 32 addresses. However, the first four IP addresses and the last IP addresses in each subnet CIDR blocks are reserved and cannot be assigned to an instance. This is the reason why in the explanation part, it has been written as 27 IP addresses are available for location. 
