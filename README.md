@@ -64,3 +64,22 @@
    **Not True** - EBS volumes can be attached to any EC2 instance in an AZ.
  #### Your VPC has 3 subnets- 1 private , 2 public. An EC2 instance are in same Security Group. You created an application which connects to mobile device using custom port. This application has been rolled out to production and you need to open this port globally to the Internet. 
    * Open the port on the existing security group. Your EC2 instances will be able to communicate over this port immediately. 
+#### You are creating a number of EBS volumes for your EC2 instances. You are concerned on the backups of the EBS volumes. Which of the below is a way to backup the EBS volumes.
+  * Write a cronjob that uses the AWS CLI to take a snapshot of production EBS volumes 
+  * You cacn create a snapshot vial CLI command -create-snapshot
+  * Even though snapshot are saved incrementally, the snapshot deletion process is designed so that you only need to retain most recent snapshot in order to restore the entire volume. 
+#### Planning to host static website on EC3 for highly available environment. (Use below aspects)
+  * An autoscaling group to recover from EC2 instance failure
+  * Elastic Load Balancer
+  * Multiple Availability Zone
+#### What amount of temp space is allocated to you when using lambda function per invocation
+  * 512 MB
+#### Requirement to create a subnet in an AWS VPC which will host around 20 hosts. This subnet will be used to host web servers.
+  * 10.0.1.0/27
+  * The availabe IP addresses for this CIDR block is 32 addresses. However, the first four IP addresses and the last IP addresses in each subnet CIDR blocks are reserved and cannot be assigned to an instance. This is the reason why in the explanation part, it has been written as 27 IP addresses are available for location. 
+  **Note:**
+  * 10.0.1.0 : Network address
+  * 10.0.1.1 : Reserved by AWS
+  * 10.0.1.2 : Reserved by AWS
+  * 10.0.1.3 : Reserved by AWS
+  * 10.0.1.31 : Network Broadcast Address
