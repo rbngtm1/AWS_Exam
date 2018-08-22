@@ -83,3 +83,50 @@
   * 10.0.1.2 : Reserved by AWS
   * 10.0.1.3 : Reserved by AWS
   * 10.0.1.31 : Network Broadcast Address
+#### You run a website which hosts videos and you have 2 types of members premium fee paying members and free members. All videos uploaded by both your premium members and free members are processed by a fleet of EC2 instances which will poll as videos are uploaded. However, you need that your premium fee paying memebers videos have a higher priority than your free members. How you design SQS?
+  * Create 2 SQS queue, one for premium and one for free members. Program your EC2 fleet to poll the premium queue first and if empty, to then poll your free members SQS queue
+#### True about SSE
+  * SSE encrypts message as soon as Amazon SQS receives them
+#### In VPC, you have launched 2 web servers and attached to an internet facing ELB. Both web servers and ELB are located in public subnets. Yet, you are still not able to access your web application via ELB.
+  * You should attatch an Internet gateway to the VPC and route it to the subnet.
+#### You want to ensure that you keep a check on the Active volumes, Active snapshots and Elastic IP Addresses you use, so that, you don't go beyond the service limit. Which of the below services can help in this regard?
+  * AWS Trusted Advisor
+    * It is online resourse to help you reduce cost, increase performancr and improve security by optimizing AWS environment.
+#### If you don't know what storage capacity requirements are, text and audio files can be stored in s3 for storage until its retrieved.
+  
+#### To create a script which could create duplicate resources in another region in case of disaster.
+  * Cloud formation
+    * helps you model and set up your Amazon Web Service resources, so that, you can spend less time managing those resources and more time foucusing on your application that runs in AWS. 
+#### Bastion hosts ar instances in the public subnets which are used as a jump servers to resources within other subnets.
+#### For reserved instancs which we need to shutdown now but data is still required for future
+  * Take a snapshot of EBS volumes and terminate the instance
+  * Sell the instance on the AWS Reserved Instance Marketplace.
+#### Disaster Recovery Best Solution
+  * Creates an AMI of the EC2 instances and copy it to another region. 
+#### You need to add the security rule so that you can access HTTP traffic to the server. Add rule to the security group as desired.
+  * Type HTTP--Protocol TCP--Port Range 80--Source 0.0.0.0/0
+  * Type HTTP--Protocol TCP--Port Range 80--Source ::/0
+  * Type SSH--Protocol TCP--Port Range 22--SOurce 0.0.0.0/0
+#### Amazon Redshift uses block size for its columnar storage
+  * 1024KB
+#### Don't save your API credentials. Instead create a role in IAM and assign this role to an EC2 instance when you first create it. 
+#### Which of the following metrics do you need to design a custom cloud watch metric for, when monitoring the health of your EC2 instances.
+  * Memory Usage
+#### In order for EC2 Instance to be accessed to Internet. Required is:
+  * An internet gateway attached to the VPC.
+  * A public IP address attached to the instance.
+  * A route entry to the Internet gateway in the Route table.
+#### Kinesis Stream Data records are oly accessible for a default of 24 hours from the time they are added to a stream. It stores 25 hours by default, upto 168 hours.
+#### A customer wants to track access to their Amazon S3 buckets and also use this information for their internal security and access audits. Which of the following will meet customers requirements.
+  * Enable server access logging for all required Amazon S3 buckets. 
+#### To define Network ACL for your subnet, as soon as the rule matches traffic, it's applied regardless of any higher-nubered rule that may contraidict it.
+#### Which procedure for backing up a relational database on EC2 that is using a set of RAIDed EBS Volumes for storage minimizes the time during which the database cannot be written to and results in a consistent backups?
+  * Supend disk I/0
+  * Start EBS snapshot of volumes
+  * Wait for snapshots to complete
+  * Resume disk
+ #### Serices that can be used to store sesson data for session management
+  * RDS, DynamoDB and Elasticache.
+#### 24/7 access to support 
+  * Access to the full set of Trusted Advisor Checks (**Both Business and Enterprise**)-- But Business ensures the cost is minimum.
+  
