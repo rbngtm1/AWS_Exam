@@ -176,6 +176,20 @@
   * Elastic IP must be assigned to access Internet
   * A public IP address is reachable from the Internet. You can use public IP address for communication between your Instances and the internet.
   * An Elastic IP address is a static IP address designed for dynamic cloud computing. 
+#### If your instance doesn't have a public IP address, you can associate an Elasitc IP address with your instance to enable communication with the Internet.
+#### You have built an AMI. Another AWS account holder wants to use your AMI, but is not able to access it. What could be the issue?
+  * AMI needs to be made Public.
+#### What is the basic requirement to login into an EC2 instance on the AWS Cloud.
+  * Key-pair.
+#### Feature that allows to take backups of EBS Volumes:
+  * Snapshots.
+#### A company wants to host a selection of MongoDB Instances. They are expecting a high load and want to have low latency.
+  * I2
+  * I2 instance are optimized to deliver tens of thousands of low-latency, random I/O operations per sec. 
+    * Well suited for NoSQL database
+    * Clustered database
+    * OLTP System
+
 
 
   
