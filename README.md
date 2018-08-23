@@ -129,4 +129,55 @@
   * RDS, DynamoDB and Elasticache.
 #### 24/7 access to support 
   * Access to the full set of Trusted Advisor Checks (**Both Business and Enterprise**)-- But Business ensures the cost is minimum.
+#### Private IP addresses
+  * In Amazon EC2 classic, the private IP addresses are only returned to Amazon EC2 when the instance is stoppe or terminated.
+  * In Amazon VPC, an instance retains its private IP addrsses when the instance is stopped.
+  * In Amazon EC2 classic, the private IP address is associated exclusively with instance for its lifetime
+  * **Not true about Private IP Addresses**
+  * In Amazon VPC, an instance doesn't retain its private IP addresses when the instance is stopped.
+#### Best practices for monitoring EC2 instances
+  * Create and implement a monitoring plan that collects monitoring data from all of the parts on your AWS Solution.
+  * Automate monitoring tasks as much as possible.
+  * Check the log files on your EC2 instances.
+#### SWF
+  * makes easier to develop asynchronous and distributed applications by providing programming model and infrastructure for coordinating distributed components.
+#### SWF and Amazon EC2 are appropriate solution for:
+  * Managing a multi-step and multi-decision checkout process of an e-commerce website
+  * Orchestrating the execution of distributed and auditable business processes.
+#### In case of sudden increase in traffic to keep minimum storage cost where it doesn't matter if some objects are lost:
+  * Use S3 Reduce Redundancy Storage(RRS)
+#### EC2 Instance
+  * There is no charge for public data sets.
+  * Instance state can be pening, rebooting, running, stopping, stopped, sutting down an terminated.
+  * EBS Backed Instance can be start, stop and terminated.
+#### Database Servers
+  * Shoulnot be exposed to the internet and should reside in private subnets.
+#### Which of the following can be use as origin server in CloudFront?
+  * A webserver running on EC2
+  * A webserver running in your own datacenter.
+  * An Amazon S3 bucket.
+#### You have written a Cloud Formation template that creates 1 ELB fronting 2 EC2 instances. Which sector of template should you edit, so that DNS of the load balancer is rturned upon creation of the stack. 
+  * Outputs
+#### Is it true that EBS can always tolerate AZ failure?
+  * No, all EBS volumes is stored in single AZ.
+  * EBS volume has multiple copies but within same AZ.
+#### Configured and Peered 2 VPC-VPC1 in Private Subnet and VPC2 in Public Subnet. AWS uses Direct Connect to connect to VPC1. Which methods increases fault tolerance:
+  * Having a VPN Connection is considered as a backup to a Direct Connect Connection.
+  * Establish a hardware VPN over the internet between VPC-1 an the on-premise network.
+  * Establish a new AWS Direct Connect Connection and Private virtual interface in the same AWS region as VPC.
+#### Which of the following benefits does adding Multi-AZ deployment in RDS provide?
+  * MultiAZ deployed database can tolerate an AZ failure.
+  * Make database more availabe during maintenace taskes.
+#### By default, what happens to data when EC2 instance is terminated.
+  * For EBS backed AMI, any volume attached apart from OS volume is preserved.
+  * All the snapshots of the EBS volume with operating system is preserved.
+  * For S3 backed AMI, all the data in the local( ephemeral) hard drive is deleted.
+#### An instance must either have a public or Elastic IP in order to be accessible from the Internet. 
+  * Elastic IP must be assigned to access Internet
+  * A public IP address is reachable from the Internet. You can use public IP address for communication between your Instances and the internet.
+  * An Elastic IP address is a static IP address designed for dynamic cloud computing. 
+
+
+  
+
   
