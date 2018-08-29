@@ -189,6 +189,35 @@
     * Well suited for NoSQL database
     * Clustered database
     * OLTP System
+#### Which of the below elements can you manage in IAM dashboard.
+  * Groups
+  * User
+  * Roles
+  * Policies
+  * Identity Providers
+  * Accout Settings
+  * Credential report
+  * Encryption Keys
+  
+#### Aws Lambda supports code written in
+  * Node.js, Python, Java and C#
+#### A photo-sharing service stores picture in Amazon(s3) and allows application sign-in using an OpenID connect-compatible identity provider. Which AWS Security Token Service approach to temporary access should you use for Amazon S3 operations.
+  * Web Identity Federation (sign in with fb, google, etc.)
+#### If resources needs to be seperated and a seperate government model is required for each section of resources, then its better to have seperate AWS account for each division
+  * Enable AWS cross account access for all corporate IT administrators in each child account.
+  * Use AWS consolidated billing by creating AWS Organizations to link the divson's account to a parent corporate account.
+  
+#### SQS helps to facilitate horizontal scaling and encoding tasks
+#### In the event of an unplanned outage of your primary DB, AWS RDS automatically switches over to the secondary. In such case which record in Route 53 is changed
+  * CNAME
+#### Failover is automatically handled by Amazon RDS so that you can reserve database operations as quickly as possible without administrative intervation. When failing over, RDS simply flips the cannonical name record (CNAME) for your DB instance.
+#### Regarding tagging, you cannot tag placement groups
+#### Monitoring data available in Amazon EBS Volumes without any charge
+  * Basic: Data is available automatically in 5 mins.
+  * Detailed: Provisioned IOPS SSD (io1) volumes automatically send one-minute metrics to CloudWatch.
+#### Major advantage of having VPN in AWS
+  * You can connect to cloud resources to on-premise data centers using VPN connections
+
 
 
 
