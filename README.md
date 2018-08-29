@@ -216,7 +216,15 @@
   * Basic: Data is available automatically in 5 mins.
   * Detailed: Provisioned IOPS SSD (io1) volumes automatically send one-minute metrics to CloudWatch.
 #### Major advantage of having VPN in AWS
-  * You can connect to cloud resources to on-premise data centers using VPN connections
+  * You can connect to cloud resources to on-premise data centers using VPN connections.
+  
+**** 
+#### An administrator runs a highly available application in AWS. A file storage layer is needed that can share between instances and scale the platform more easily. Which AWS service can perform this action?
+  * Amazon EFS 
+  * Amazon EFS provides scalable file storage for use with Amazon EC2. You can create an EFS file system and configure your instance to mount the file system. The EFS file system can be used as a common data source for workloads and applications running on multiple instances. 
+#### While reviewing the Auto Scaling events for your application, you notice that your application is scaling up and down multiple times in same hour. What design choice could you make to optimize costs while preserving elasticity?
+  * Modify the autoscaling cool down timers
+  * Modify the cloudwatch alarm period that triggers your auto scaling down policy. 
 
 
 
