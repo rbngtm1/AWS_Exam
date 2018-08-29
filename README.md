@@ -225,8 +225,16 @@
 #### While reviewing the Auto Scaling events for your application, you notice that your application is scaling up and down multiple times in same hour. What design choice could you make to optimize costs while preserving elasticity?
   * Modify the autoscaling cool down timers
   * Modify the cloudwatch alarm period that triggers your auto scaling down policy. 
-
-
+#### A company hosts a popular web application that connects to an Amazon RDS MySQL DB instance running in a private VPC subnet created with default ACL settings. The web servers must be accessible only to the customers on an SSL connection and the database must only be accessible to web servers in a public subnet. Which solution meets these requirements without impacting other running applications>
+  * Create a Web server Security group that allows HTTP port 443 inbound traffic from anywhere (0.0.0.0/0) and apply it to the Web Servers.
+  * Create a DB server Security group allows MySQL port 3306 inbound and specify the source as the Web Server security group. 
+#### (**Recommended Rules**)
+* For Web ServerSG:
+  * Source: 0.0.0.0/0 Protocol: TCP Port Range:80 Allow inbound HTTP access to the web servers from any IPv4 address
+  * Source: 0.0.0.0/0 Protocol: TCP Port Range:443 Allow inbound HTTP access to the web servers from any IPv4 address
+* For DBServerSG:
+  * Source: The ID of your webserver SG Protocol: TCP PortRange: 1433 Allow inbound Microsoft SQL Server access from the web services associated with the WebServer SG security group
+  * Source: The ID of your webserver SG Protocol: TCP PortRange: 3306 Allow inbound MySQL Server access from the web services associated with the WebServer SG security group
 
 
   
