@@ -70,5 +70,41 @@
     * The most efficient storage mechanism for just storing metadata is DynamoDB. DynamoDB is normally used in conjunction with the S3. So, after storing images in S3, you can store their metadata in DynamoDB. You can also create secondary indexes for DynamoDB Tables. 
 #### An application hosted on EC2 Instances has its promotional campaign due to start in 2 weeks. There is a mandate from the management to ensure that no performance problems are encountered due to traffic growth during this time. Which of the following must be done to the Auto Scaling Group to ensure this requirement is fulfilled?
   * Configure Dynamic Scaling and use Target tracking scaling Policy. 
+    * If scaling is based on a metric, which is an utilization metric that increases or decreases proportionally to the number of instances in the Auto Scaling group, it's recommeded to use target tracking policy instead. 
+    * Scheduled Scaling is not a suitable option in here because you cannot predict the load changes and how long you need to run. In this scenario question, we are not sure about actual traffic, we only know there will be heavy traffic and we don't have any history to predict it either. 
+#### Currently a company makes use of EBS snapshots to back up their EBS Volumes. As a part of the business continuity requirement, these snapshots need to be made available in another region. How can this be achieved?
+  * Create Snapshot and copy the snapshot to new region. 
+#### A company has an application hosted in AWS. This application consists of EC2 instances which sit behind an ELB with EC2 instances. The following are the requirements from an administrative perspective:
+  * a. Ensure notifications are sent when the read requests go beyond 1000 requests per minute.
+  * b. Ensure notifications are sent when the latency goes beyond 10 seconds. 
+  * c. Any API activity which calls for sensitive data should be monitored 
+**Which of the following can be used to satisfy these requirements?**
+  * Use CloudTrial to monitor the API Activity
+  * Use CloudWatch metrics for the metrics that needs to be monitored as per the requirement and set up an alarm activity to send out notifications when the metric reaches the set threshold limit. 
+#### There is a requirement for an iSCSI device and the legacy application needs local storage. Which of the following can be used to meet the demands of the application?
+  * Configure Storage Gateway Stored Volume
+    * In cached mode, your primary data is written to S3, while retaining your frequently accessed data locally in a cache for low-latency access. 
+    * In the stored mode, your primary data is stored locally and your entire database is available for low-latency access while asychronously backed up to AWS.
+#### There is a requirement for EC2 Instances in a private subnet to access an S3 bucket. It is required that the traffic doesnot traverse to the Internet. Which of the following can be used to fulfill the requirement?
+  * VPC Endpoint
+    * A VPC Endpoint enables you to privately connect your VPC to supported AWS services and VPC endpoint services powered by PrivateLink without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Instances in your VPC do not require public IP addresses to communicate with resources in the service. 
+#### There is a website hosted in AWS that might get a lot of traffic over the next couple of weeks. If the application faces the disaster, which of the following can be used to reduce potential disruption to users in case of issues?
+  * Use Route53 to route to static website. 
+    * In a disaster recovery scenario, the best choice out of all given options is to divert the traffic to a static website. 
+#### A database hosted using the AWS RDS service is getting a lot of database queries and has now become a bottleneck for the associating application. What action will ensure that the database is not a performance bottleneck?
+  * Setup ElastiCache in front of the database. 
+    * ElastiCache is an in-memory solution which can be used in front of a database to cache the common queries issued against the database. This can reduce the overall load on the database. 
+#### You require the ability to analyze a customer's clickstream data on a website so they can do behavioral analysis. Your customer needs to know what sequence of pages and ads their customer clicked on. This data will be used in real time to modify the page layouts as customer click through the site to increase stickiness and advertising click-through. Which option meets the requirements for captioning and analyzing this data?
+  * Push web clicks by session to Amazon Kinesis and analyze behaviour usin Kinesis workers. 
+    * Kinesis Data Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstream, financial transactions, social media feeds, IT logs, and location-tracking events. 
+#### A company has an infrastructure that consists of machines which keep sending log information every 5 minutes. The number of these machines can run into thousands and it is required to ensure that the data can be analyzed at a later stage. Which of the following would help in fulfilling this requirement?
+  * Use Kinesis Firehose with S3 to take the logs and store them in S3 for further processing.
+    * Kinesis Firehose helps capture, transform, and load streaming data into Amazon S3, Redshift, ElastiSearch Service, and Splunk.
+#### A company is planning to use Docker containers and necessary container orchestration tools for their batch processing requirements. There is a requirement for batch processing for both critical and non-critical data. Which of the following is the best implementation step for this requirement, to ensure that cost is effectively managed?
+  * Use ECS for container orchestration and a combination of Spot and Reserved Instances for the underlying Instances.
+    * The Elastic Container Service from AWS can be used for container orchestration. Since there are both critical and non-critical loads, one can use Spot instances for the non-critical workloads for ensuring cost is kept at minimum. 
+#### A company hosts 5 web servers in AWS. They want to ensure that Route53 can be used to route user traffic to random web servers when they request for the underlying web application. Which routing policy should be used to fulfill this requirement?
+  * Multivalue Answer
+    * If you want to route traffic appropriately randomly to multiple resources such as web servers, you can create one multivalue answer record for each resource and, optionally, associate an Amazon Route 53 health check with each record. 
 
   
