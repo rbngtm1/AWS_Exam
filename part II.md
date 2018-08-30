@@ -30,3 +30,10 @@
   * AWS Elastic Beanstalk
     * NGINX is an open source software for web serving, reverse proxying, caching, load balancing, etc. NGINX can be hosted in EC2 instance through a series of clear steps--Launch an EC2 instance through the console. SSH into the instance and use the command yum install -y nginx to install nginx. Also, make sure that it is configured to restart automatically after a reboot. 
     * It can also be installed with an ELastic Beanstalk service. To enable NGINX proxy server with your Tomcat application, you must add a configuration file to .ebeextentions in the application source bundle that you upload to Elastic Beanstalk. 
+#### A million images are required to be uploaded to S3. What option ensures optimal performance in this case?
+  * Use a hexadecimal hash for the prefix
+    * One way to introduce randomeness to key names is to add a hash string as prefix to the key name. 
+#### There is a requirement to get the IP addresses for resources accessed in a private subnet. Which of the following can be used  to fulfill this purporse?
+  * VPC flow logs
+    * VPC flow logs is a feature that enables you to capture your information about the IP traffic going to and from network interfaces in your VPC. 
+#### A database is required for a Two-Tier application 
