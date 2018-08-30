@@ -16,8 +16,8 @@
   
 #### There is a requirement to host a database on a EC2 Instance. It is also required that the EBS volume should support 12,000 IOPS. Which Amazon EBS volume type meets the performance requirement.
   * EBS Provisioned IOPS SSD
-     * For high performance and high requirement as in this case, the ideal choice would be EBS Provisioned IOPS SSD. Suitable for large database workloads, such as MongoDB, Cassandra, Microsoft SQL Server, MySQL, PostgreSQL, Oracle. 
-     * Genereal purpose SSD(gp2), on the other hand, is recommended for most wide variety of workloads, system boot volumes, virtual desktops, low-latency interactive apps, development and test environment. 
+     * For high performance and high requirement as in this case, the ideal choice would be EBS Provisioned IOPS SSD. Suitable for large database workloads, such as MongoDB, Cassandra, Microsoft SQL Server, MySQL, PostgreSQL, Oracle.-- Volumesize (4GiB - 16TiB), Max IOPS/Volume = 32,000, Processing data = 500MiB/s
+     * Genereal purpose SSD(gp2), on the other hand, is recommended for most wide variety of workloads, system boot volumes, virtual desktops, low-latency interactive apps, development and test environment.-- VolumeSize (1GiB - 16TiB), Max IOPS/Volume= 10,000, Processing data = 160MiB/s
 
 #### Development teams in your organization use S3 buckets to store log files for various applications hosted in AWS development environments. The developers intend to keep the logs for a month for troubleshooting purposes, and subsequently purge the logs. What feature will enable this requirement?
   * Configuring lifecycle rules on the S3 buckets. 
@@ -41,4 +41,34 @@
 #### A Redshift cluster currently contains 60TB of data. There is a requirement that a disaster recovery site is put in place in a region located 600km away. Which of the following solutions would help ensure that this requirement is fulfilled?
   * Enable cross-region snapshots for the redshift cluster.
 #### A company is using a Redshift cluster to store their data warehouse. There is a requirement from the internal IT Security team to encrypt data for the Redshift database. How can this be achieved?
-  * Use AWS KMS Customer Default master key.
+  * Use AWS KMS Customer Default master key. 
+    * Amazon Redshift uses a hierarchy of encryption keys to encrypt the database. You can use either AWS Key Service Management Service(KMS) or a hardware security  module(HSM) to manage the top-level encryption keys in this hierarchy. 
+#### There is a requirement for Block-level storage to store 500GB of data. Data Encryption is also required. Which of the following can be used in such a case?
+  * AWS EBS Volumes. 
+    * AWS EBS is a Block-level storage Service.
+#### An application requires an EC2 instances for continuous batch processing activities requiring a minimum throughput of 500MiB/s. Which of the following is the best option for this?
+  * EBS Throughput Optimized
+    * EBS Throughput Optimized HDD(st1) is low cost HDD volume designed for frequently accessed, throughput intensive workloads. Used for streaming, big data, data warehouses, log processes. Volumesize (500GiB - 16TiB), Max IOPS/Volume = 500, Processing data = 500MiB/s
+    * Cold HDD(sc1), on the other hand, is lowest cost HDD volume designed for less frequently accessed workloads. Volumesize (500GiB - 16TiB), Max IOPS/Volume = 250, Processing data = 250MiB/s
+    
+#### An application needs to access data in another AWS account in the same region. Which of the following can be used to ensure that the data can be accessed as required?
+  * Use VPC Peering between both accounts.
+    * A VPC Peering connection is the networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate with each other as if they are within the same network.
+    * You can create a VPC Peering connection between your own VPCs, with a VPC in another AWS account, or with a VPC in different AWS Region. 
+#### An application consists of following architecture:
+  * a. An EC2 instances in multiple AZ's behind an ELB.
+  * b. The EC2 instances are launched via an AutoScaling Group. 
+  * c. There is a NAT instance which is used so that instances can download updates from the internet. 
+  **
+  Which of the following is a bottleneck in the architecture?
+  * NAT Instance
+    * Since there is only one NAT instance, this is a bottleneck for the architecture. For high availability, launch NAT instances in multiple Availability Zones and make it as part of an Auto Scaling Group.
+#### There is a requirement to host a database application having a lot of resource-intensive reads and writes. Which of the following is the best storage option to ensure that the data is persistent?
+  * EBS Provisioned IOPS
+#### An application send images to S3. The metadata for these images needs to be saved in persistent storage and is required to be indexed. Which of the following can be used for the underlying metadata storage?
+  * AWS DynamoDB
+    * The most efficient storage mechanism for just storing metadata is DynamoDB. DynamoDB is normally used in conjunction with the S3. So, after storing images in S3, you can store their metadata in DynamoDB. You can also create secondary indexes for DynamoDB Tables. 
+#### An application hosted on EC2 Instances has its promotional campaign due to start in 2 weeks. There is a mandate from the management to ensure that no performance problems are encountered due to traffic growth during this time. Which of the following must be done to the Auto Scaling Group to ensure this requirement is fulfilled?
+  * Configure Dynamic Scaling and use Target tracking scaling Policy. 
+
+  
