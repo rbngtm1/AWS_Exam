@@ -7,6 +7,6 @@
   * http://d11111f8.cloudfront.net/main.html?language=de
   * http://d11111f8.cloudfront.net/main.html?language=en
   * http://d11111f8.cloudfront.net/main.html?language=es
-  ****
-  **how should AWS Cloudfront be configured to deliver cache data in the correct language?**
-    * Based on query string parameter
+  
+  **How should AWS Cloudfront be configured to deliver cache data in the correct language?**
+   * Based on query string parameter
