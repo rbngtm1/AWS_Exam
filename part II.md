@@ -106,5 +106,14 @@
 #### A company hosts 5 web servers in AWS. They want to ensure that Route53 can be used to route user traffic to random web servers when they request for the underlying web application. Which routing policy should be used to fulfill this requirement?
   * Multivalue Answer
     * If you want to route traffic appropriately randomly to multiple resources such as web servers, you can create one multivalue answer record for each resource and, optionally, associate an Amazon Route 53 health check with each record. 
+#### A customer wants to create a stream of EBS Volumes in AWS. The data on the volume is required to be encrypted at a rest. How can this be achieved?
+  * Use KMS to generate encryption keys which can be used to encrypt the volume. 
+#### A company has a requirement to store 100TB of data to AWS. The data will be exported using AWS Snowball and needs to then reside in a database layer. The database should have the faculty to be queried from a business intelligence application. Each item is roughly 500KB in size. Which of the following is an ideal storage mechanism for the underlying data layer?
+  * AWS RedShift
+    * Amazon Redshift is a fully managed, petabyte scale datawarehouse service in the cloud. You can start with just a few hundred GB of data and scale to a petabyte or more. This enables you to use the data to acquire new insights for your business and customers. 
+    * The first step is to create a data warehouse is to launch a set of nodes, called an Amazon Redshift Cluster. After you provision your cluster, you can upload your data set and then perform data analysis queries. Regardless of the size of the datasets, Amazon Redshift offers fast query performance using the same SQL-based and business intelligence application that you use today. 
+    * **DynamoDB** is not a better option for above scenario because the maximum item size in DynamoDB is **400KB**.
+    * **AWS RDS** is not a better option because, with RDS we can create MySQL, MariaDB, SQL Server, PostgreSQL, and Oracle RDS DB instance with up to **16 TiB of storage**
+    * **AWS Aurora** is not a better option because Aurora supports 64TB of data.
 
   
