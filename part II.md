@@ -114,6 +114,15 @@
     * The first step is to create a data warehouse is to launch a set of nodes, called an Amazon Redshift Cluster. After you provision your cluster, you can upload your data set and then perform data analysis queries. Regardless of the size of the datasets, Amazon Redshift offers fast query performance using the same SQL-based and business intelligence application that you use today. 
     * **DynamoDB** is not a better option for above scenario because the maximum item size in DynamoDB is **400KB**.
     * **AWS RDS** is not a better option because, with RDS we can create MySQL, MariaDB, SQL Server, PostgreSQL, and Oracle RDS DB instance with up to **16 TiB of storage**
-    * **AWS Aurora** is not a better option because Aurora supports 64TB of data.
+    * **AWS Aurora** is not a better option because Aurora supports **64TB of data**.
+#### Your company currently has a set of EC2 instances hosted in AWS. The states of these instances need to be monitored and each stage needs to be recorded. Which of the following can help fulfill this requirement. 
+  * Use CloudWatch Events to monitor the stage change of the events.
+  * Use AWS Lambda to store a change record in a DynamoDB table. 
+#### A company has setup an application in AWS that interacts with DynamoDB. It is required that when an item is modified in a DynamoDB table, an immediate entry is made to the associating application. How can this be accomplished?
+  * Use DynamoDB streams to monitor the changes to the DynamoDB table.
+  * Trigger a Lambda function to make an associated entry in an application as soon as the DynamoDB streams are modified.
+    * A DynamoDB stream is an ordered flow of information about changes to items in an Amazon DynamoDB table. When you enable stream on table, DynamoDB captures information about every modification to data items in the table. 
+    * **Forex:** Consider a mobile gaming app that writes to a Score table. Whenever the top score of the Score table is updated, a corresponding stream record is written to the table's stream. This event could then trigger a Lambda function that posts a Congratulation message on a Social media network handle.
+    
 
   
