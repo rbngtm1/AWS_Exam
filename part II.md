@@ -123,6 +123,9 @@
   * Trigger a Lambda function to make an associated entry in an application as soon as the DynamoDB streams are modified.
     * A DynamoDB stream is an ordered flow of information about changes to items in an Amazon DynamoDB table. When you enable stream on table, DynamoDB captures information about every modification to data items in the table. 
     * **Forex:** Consider a mobile gaming app that writes to a Score table. Whenever the top score of the Score table is updated, a corresponding stream record is written to the table's stream. This event could then trigger a Lambda function that posts a Congratulation message on a Social media network handle.
+#### An application currently uses AWS RDS MySQL as its data layer. Due to recent performance issues on the database, it has been decided to seperate the querying part of application by setting up a seperate reporting layer. Which of the following additional steps could also potentially assist in improving the performance of the underlying database?
+  * Make use of Read Replicas to setup a secondary read-only database.
+    * Amazon RDS read replicas provide enhanced performance and durability for database(DB) instances. This feature makes it easy to elastically scale out beyond the capacity constrants of a single DB instance for read-heavy database workloads. You can create one or more replicas of a given source DB instance and serve high-volume application read traffic from multiple copies of your data, thereby increasing aggregate read throughput
     
 
   
