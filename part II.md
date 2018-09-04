@@ -126,6 +126,10 @@
 #### An application currently uses AWS RDS MySQL as its data layer. Due to recent performance issues on the database, it has been decided to seperate the querying part of application by setting up a seperate reporting layer. Which of the following additional steps could also potentially assist in improving the performance of the underlying database?
   * Make use of Read Replicas to setup a secondary read-only database.
     * Amazon RDS read replicas provide enhanced performance and durability for database(DB) instances. This feature makes it easy to elastically scale out beyond the capacity constrants of a single DB instance for read-heavy database workloads. You can create one or more replicas of a given source DB instance and serve high-volume application read traffic from multiple copies of your data, thereby increasing aggregate read throughput
-    
+#### A company is asking its developers to store application logs in an S3 bucket. These logs are only required for a temporary period of time after which, they can be deleted. Which of the following steps can be used to effectively manage this?
+  * Use S3 Lifecycle Policies to manage the deletion
+#### An application running on EC2 instances processes sensitive information stored in Amazon S3. This information is accessed over the Internet. The security team is concerned that the Internet connectivity to Amazon S3 could be a security risk. Which solution with resolve the security concern?
+  * Access the data through a VPC endpoint for Amazon S3
+  
 
   
