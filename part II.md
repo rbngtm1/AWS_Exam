@@ -130,6 +130,6 @@
   * Use S3 Lifecycle Policies to manage the deletion
 #### An application running on EC2 instances processes sensitive information stored in Amazon S3. This information is accessed over the Internet. The security team is concerned that the Internet connectivity to Amazon S3 could be a security risk. Which solution with resolve the security concern?
   * Access the data through a VPC endpoint for Amazon S3
-  
+#### 
 
   
