@@ -165,5 +165,16 @@
   * Enable Amazon Redshift Enhanced VPC Routing.
     * When you use Amazon Redshift Enhanced VPC Routing, Amazon Redshift forces all **Copy** and **Unload** traffic between your cluster and your data repositories throught your Amazon VPC.
     * If Enhanced VPC is not enabled, Amazon Redshift routes traffic through the internet, including traffic to other services within the AWS network. 
+#### A company has a set of Hyper-V machines and VMware virtual machine. They are now planning on migrating these instances to the AWS cloud. Which of the following can be used to move this resources to AWS Cloud?
+  * Use the VM Import Tools
+    * You can import Windows and Linux VMs that use VMware ESX or Workstation, Microsoft Hyper-V, and Citrix Xen virtualization formats.
+#### An architecture consists of following:
+  * **a. primary and secondary infrastructure hosted in AWS.
+  * b. Both infrastructure comprise ELB, AutoScaling and EC2 resources.**
+  **
+  How should Route 53 be configured to ensure proper failover in case the primary infrastructure were to go down?
+  * Configure a failover routing policy.
+    * You can create an active-passive failover configuration by using failover records. Create a primary and a secondary failover record that have the same name and type, and associate a health check with each. 
 
   
+ 
