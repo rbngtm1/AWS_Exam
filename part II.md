@@ -169,12 +169,26 @@
   * Use the VM Import Tools
     * You can import Windows and Linux VMs that use VMware ESX or Workstation, Microsoft Hyper-V, and Citrix Xen virtualization formats.
 #### An architecture consists of following:
-  * **a. primary and secondary infrastructure hosted in AWS.
-  * b. Both infrastructure comprise ELB, AutoScaling and EC2 resources.**
+  * a. primary and secondary infrastructure hosted in AWS.
+  * b. Both infrastructure comprise ELB, AutoScaling and EC2 resources.
   **
+
   How should Route 53 be configured to ensure proper failover in case the primary infrastructure were to go down?
   * Configure a failover routing policy.
     * You can create an active-passive failover configuration by using failover records. Create a primary and a secondary failover record that have the same name and type, and associate a health check with each. 
-
+#### A company requires to provision test environment in a short duration. Also required is an ability to tear them down easily for cost optimization. How can this be achieved.
+  * Use CloudFormation templates to provision the resources accordingly. 
+    * AWS CLoudFormation provides templates that you can use to create AWS resources and provision them in an orderly and predictable fashion. This can be useful for creating short-lived environments, such as test environments.
+#### A company stores its log data in S3 bucket. There is current need to have search capabilities available for the data in S3. How can this be achieved in an efficient and ongoing manner?
+  * Use an AWS Lambda function which gets triggered whenever the data is added to the S3 bucket.
+  * Load the data into Amazon ElasticSearch.
+    * AWS ELasticSearch provides full search capabilities and can be used to log files stored in S3 buckets. 
+#### A company wants to self-manage a database environment. Which of the following should be adopted to fulfill this requirement?
+  * Create an EC2 Instance and install the database service accordingly. 
+#### A company wants to have a 50Mbps dedicated connection to its AWS resources. Which of the below services can help fulfill this requirement?
+  * Direct Connect
+    * AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS DirectConnect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.
+#### A company is building a Two-Tier web application to serve dynamic transaction-based content. The Data Tier uses an Online Transactional Processing (OLTP) database. What should you leverage to enable an elastic and scalable Web Tier?
+  * ELastic Load Balancing, Amazon EC2, and AutoScaling
   
  
