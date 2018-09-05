@@ -149,6 +149,11 @@
 #### You have an application hosted on AWS consisting of EC2 Instances launched via an AutoScaling Group. You notice that the EC2 Instances are not scaling up on demand. What checks can be done to ensure that the scaling occurs as expected?
   * Ensure that the right metrics are being used to trigger the scale out.
     * If your scaling events are not based on the right metrics and donot have the right threshold defined, then the scaling will not occur as you want it to happen.
-#### A company hosts a popular web application that connects to an Amazon RDS MySQL DB 
+#### You have an application hosted in AWS that writes images to an S3 bucket. The concurrent number of users on the application is expected to reach around 10,000 with approximately 500 reads and writes expected per second. How should the architecture maximize Amazon S3 performance?
+  * Prefix each object name with a random string
+    * If the request rate is high, you can use hash keys or random string to prefix the object name. 
+#### A company has a set of EBS Volumes that need to be catered to in case of a disaster. How can one achieve this in an efficient manner using the existing AWS services?
+  * Use EBS Snapshots to create the volume in another region.
+#### 
 
   
