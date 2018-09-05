@@ -131,6 +131,24 @@
 #### An application running on EC2 instances processes sensitive information stored in Amazon S3. This information is accessed over the Internet. The security team is concerned that the Internet connectivity to Amazon S3 could be a security risk. Which solution with resolve the security concern?
   * Access the data through a VPC endpoint for Amazon S3
     * A VPC endpoint enables you to privately connect your VPC to supported AWS services and VPC endpoints services powered by PrivateLink without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Instances in your VPC do not require public IP addresses to communicate with resources in the service. 
-#### 
+#### You have set up a Redshift cluster in AWS and are trying to access it, but are unable to do so. What should be done so that you can access the Redshift Cluster?
+  * Change the security group of the cluster
+    * When you provision an Amazon Redshift cluster, it is locked down by default so nobody has access to it. To grand other users inbound access to an Amazon Redshift cluster, you associate the cluster with a security group.
+#### You have a web application hosted on a EC2 instances in AWS which is being accessed by users across the globe. The Operations team has been receiving support requests about extreme slowness from users in some regions. What can be done to the architecture to improve the response time of these users?
+  * Place the EC2 Instance behind CloudFront
+    * Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and images files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. 
+#### Currently, you have a NAT Gateway defined for your private instances. You need to make the NAT Gateway highly available. How can this be accomplished?
+  * Create a NAT Gateway in Another Availability Zone
+#### A company wants to have a fully managed data store in AWS. It should be a compatible MySQL database, which is an application requirement. Which of the following database can be used for this purpose?
+  * Amazon Aurora
+    * is a fully managed, MySQL and PostgreSQL compatible, relational database engine
+#### A Solution Architect is designing an online shopping application running in a VPC on EC2 instances behind an ELB Application. The instances run in a Auto Scaling group across multiple Availability Zones. The application tier must read and write data to a customer database cluster. There should be no access to the database from the Internet, but the cluster must be able to obtain software patches from the Internet. Which VPC design meets these requirements?
+  * Public subnets for the application tier and NAT Gateway, and private subnets for the database cluster.
+#### A company has an application that stores images and thumbnails for images on S3. While the thumbnail images need to be available for download immediately, the images themselves are not accessed that frequently. Which is the most cost-efficient storage option to store images that meets these requirements?
+  * Amazon S3 standard Infrequent Access 
+#### You have an application hosted on AWS consisting of EC2 Instances launched via an AutoScaling Group. You notice that the EC2 Instances are not scaling up on demand. What checks can be done to ensure that the scaling occurs as expected?
+  * Ensure that the right metrics are being used to trigger the scale out.
+    * If your scaling events are not based on the right metrics and donot have the right threshold defined, then the scaling will not occur as you want it to happen.
+#### A company hosts a popular web application that connects to an Amazon RDS MySQL DB 
 
   
