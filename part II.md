@@ -190,5 +190,24 @@
     * AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS DirectConnect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.
 #### A company is building a Two-Tier web application to serve dynamic transaction-based content. The Data Tier uses an Online Transactional Processing (OLTP) database. What should you leverage to enable an elastic and scalable Web Tier?
   * ELastic Load Balancing, Amazon EC2, and AutoScaling
-  
+#### A customer planning on hosting an AWS RDS instance, needs to ensure that the underlying data is encrypted. How can this be achieved? 
+  * Ensure that the right instance class is chosen for the underlying instance. 
+  * Encrypt the database during creation 
+    * Encryption for the database can be done during the creation of the database. Also, you need to ensure that the underlying instance type supports DB encryption.
+#### Your Operations department is using an incident based application hosted on a set of EC2 instances. These instances are placed behind an Auto Scaling Group to ensure the right number of instances are in place to support the application. The operations department has expressed dissatisfaction with regard to poor application performance at 9:00 AM each day. However, it is also noticed that the system performance returns to optimal at 9:45 AM. What can be done to ensure that this issue gets fixed?
+  * Add a Scheduled Scaling Policy at 8:30 AM.
+    * Scaling based on a schedule allows you to scale your application in response to predictable load changes. 
+#### Your company currently has data hosted in an Amazon Aurora MySQL DB. Since this data is critical, there is a need to ensure that it can be made available in another region in case of a disaster. How can this be achieved?
+  * Create a Read Replica for the database.
+    * You can create an Amazon Aurora MySQL DB cluster as a Read Replica in a different AWS Region than the source DB cluster. Taking this approach can improve your disaster recovery capabilities, let you scale read operations into a region that is closer to your users, and make it easier to migrate from one region to another. 
+#### A company has a set of EC2 Linux based instances hosted in AWS. There is a need to have a standard file interface for files to be used across all Linux based instances. Which of the following can be used for this purpose?
+  * Consider using AWS EFS
+#### Your company is planning on using Route 53 as the DNS provider. There is a need to ensure that the company's domain name points to an existing CloudFront distribution. How can this be achieved?
+  * Create an Alias record which points to the CloudFront distribution.
+#### A company needs to extend their storage infrastructure to the AWS Cloud. The storage needs to be available as iSCSI devices for on-premises application servers. Which of the following would be able to fulfill this requirement?
+  * Use the AWS Storage Gateway-cached volumes service.
+    * By using cached volumes, you can use Amazon S3 as your primary data storage, while retaining frequently accessed data locally in your storage gateway. 
+#### Your company has a set of application that make use of Docker containers used by the Development team. There is a need to move these containers to AWS. Which of the following methods could be used to set up these Docker containers in a seperate environment in AWS?
+  * Create an Elastic Beanstalk environment with the necessary Docker containers. 
+    * Elastic Beanstalk supports the deployment of web applications from Docker containers. 
  
