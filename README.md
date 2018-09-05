@@ -232,6 +232,7 @@
 * For Web ServerSG:
   * Source: 0.0.0.0/0 Protocol: TCP Port Range:80 Allow inbound HTTP access to the web servers from any IPv4 address
   * Source: 0.0.0.0/0 Protocol: TCP Port Range:443 Allow inbound HTTP access to the web servers from any IPv4 address
+  * **Note: if you have one option to select:** Ensure the web server security group which allows MySQL port 3306 inbound traffic from anywhere (0.0.0.0/0) and apply it to the web servers. 
 * For DBServerSG:
   * Source: The ID of your webserver SG Protocol: TCP PortRange: 1433 Allow inbound Microsoft SQL Server access from the web services associated with the WebServer SG security group
   * Source: The ID of your webserver SG Protocol: TCP PortRange: 3306 Allow inbound MySQL Server access from the web services associated with the WebServer SG security group
