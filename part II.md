@@ -154,6 +154,16 @@
     * If the request rate is high, you can use hash keys or random string to prefix the object name. 
 #### A company has a set of EBS Volumes that need to be catered to in case of a disaster. How can one achieve this in an efficient manner using the existing AWS services?
   * Use EBS Snapshots to create the volume in another region.
-#### 
+#### Your company currently has a web distribution hosted using the AWS CloudFront service. The IT Security department has confirmed that the application using the web distribution now falls under the scope of PCI compliance. Which of the following steps needs to be carried out to ensure that the compliance objectives are met? 
+  * Ensure CloudFront access logs
+  * Capture requests that are sent to the CloudFront API
+    * If you run PCI or HIPPA compliant workloads on AWS shared responsibility model, it is recommended that you log your CLoudFront usage data for the last 365 days for future audition process. To log usage data, follow above 2 options.
+#### Your company has a set of EC2 instances hosted in AWS. There is a mandate to prepare for disaster and come up with the necessary disaster recovery procedures. Which of the following would help in mitigating the effects of a disaster for the EC2 Instances?
+  * Use AMIs to recreate the EC2 Instances in another region.
+    * You can create an AMI from the EC2 instances and then copy them to another region. In case of a disaster, an EC2 instance can be created from the AMI. 
+#### A company currently hosts a Redshift cluster in AWS. For security regions, it should be ensured that all traffic from and to the Redshift cluster doesn't go through the Internet. Which of the following features can be used to fulfill this requirement in an efficient manner?
+  * Enable Amazon Redshift Enhanced VPC Routing.
+    * When you use Amazon Redshift Enhanced VPC Routing, Amazon Redshift forces all **Copy** and **Unload** traffic between your cluster and your data repositories throught your Amazon VPC.
+    * If Enhanced VPC is not enabled, Amazon Redshift routes traffic through the internet, including traffic to other services within the AWS network. 
 
   
