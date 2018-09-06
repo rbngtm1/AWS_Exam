@@ -258,5 +258,15 @@ Of late, the performance on the database has been slacking due to a high number 
 #### You are designing an architecture on AWS with disaster recovery in mind. Currently the architecture consists of an ELB and underlying EC2 Instances in a primary and secondary region. How can you establish a switchover in case of failure in the primary region?
   * Use Route 53 Health Checks and then do a failover.
     * If you have multiple resources that perform the same function, you can configure DNS failover so that Route 53 will route your traffic from an unhealthy resources to a healthy resource. 
+#### Your company currently has an infrastructure hosted On-premises. You have been requested to devise an architecture on AWS for migrating some of the On-premise components. A current concern is the data storage layer. Minimum administrative overheads are also required for the underlying infrastructure in AWS. Which of the following would be included in your proposed architecture?
+  * Use DynamoDB to store data in tables
+  * Use the Simple Storage Service to store data
+#### Currently, you're helping design and architect a highly available application. After building the initial environment, you discover that a part of your application doesnot work correctly until port 443 is added to the security group. After adding port 443 to the appropriate security group, how much time will it take before the changes are applied and the application begins working correctly?
+  * Changes apply instantly to the security group, and the application should be able to respond to 443 requests.
+    * Some systems for setting up firewalls let you filter on source ports. Security groups let you filter only on destination ports.
+    * When you add or remove rules, they are automatically applied to all instances associated with the security group.
+#### A customer has a single 3-TB volume on-premise that is used to hold a large repository of images and print layout files. This repository is growing at 500GB a year and must be presented as a single logical volume. The customer is becoming increasingly constrained with their local storage capacity and wants an offsite backup of this data, while maintaining low-latency access to their frequently accessed data. Which AWS Storage Gateway configuration meets the customer requirements?
+  * Gateway-Cached Volumes with snapshots scheduled to Amazon S3
+    * Gateway-cached volumes let you use Amazon S3 as your primary data storage while retaining frequently accessed data locally in your storage gateway. 
   
  
