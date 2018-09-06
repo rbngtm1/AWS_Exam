@@ -181,4 +181,36 @@
   * It's a hardware device that can get accees via an IP through your VPC. 
 ### Performance for Services
    
-   
+   * DynamoDB acceleration (DAX) -- In-memory cache for DynamoDB. Fully managed. Millions requests per second for DynamoDB and you want to reduce latency to access to the DynamoDB table. 
+   * Amazon S3
+     * Recommended practice if you're workload if you have more that 100 requests per second for objects in an S3 bucket.
+     * Amazon S3 uses the key name to store the objects in multiple partitions. It then creates an index based on this. 
+     * For better performance, it is better that the keys are distributed across multiple partitions (use a random hash prefix as part of the key during the upload process.
+     
+     
+ #### Network
+   * Better Network Throughput - Use EC2 Instances with Enhanced Networking
+   * Place Instances in a placement group for low latency between the instances. But the instances must be in the same AZ
+   * Use EC2 Instances with the Instance type of EBS Optimized.
+   * For connections between On-premise and AWS (hybrid IT Connectivity)- Use AWS Direct Connect
+   * If you want secure connections between on-premise and AWS-- Use AWS Managged VPN Connections
+   * For connections between On-premise and AWS with both low latency and Encryption-- First, create a Direct Connect Connection. Then use AWS VPN over the Direct Connect Connection. 
+ #### Operational Excellence
+   * Always looks towards ease of use and Automation
+     * Microservices based application with orchestration-- Choose the Elastic Container Service
+     * Quickly provisioning development environments-- Use Elastic Beanstalk --Can also create custom Docker environments. 
+     * If you want to automate the provisioning of infrastructure -- Use Cloudformation
+     * If you have configuration tools such as Chef and you want to use AWS, use the AWS OpsWork service. 
+   * Use Autoscaling for managing scalability
+     * Web Tier
+     * Application Tier
+     * Proxy Servers
+     * NAT Instances
+     * Put the right conditions for Scale In and Scale Out 
+   * Managing Deployemts
+     * Blue Green Deployments--Use Route 53 for managing traffic--Use the Weighted Routing Policy
+     * Working with failure in mind--Using Route 53 failover policy to direct users to a static web site in S3.
+     * If you have users across the globe and you have a web application: Use Cloudfront to distribute the traffic. 
+   * AWS Lambda for automation 
+     * Use case- used along with AWS Cloudwatch events to carry out tasks. If you see an instance has been compromised, you can use the events and Lambda to terminate the instance
+     * Use case- storing objects in S3. The metadata for the object needs to be stored in DynamoDB. Add an S3 event, call a Lambda function. The function will read the object metadata and insert the data into DynamoDB.
