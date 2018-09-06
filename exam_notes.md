@@ -31,4 +31,24 @@
 * If you have high frequency for 2 months, you can even store the videos for 2 months on Throughput Optimized HDD. After 2 months, have a script which transfers the videos to Cold HDD.
 
 ### Databases
-  * AWS RDS, DynamoDB, Aurora and Redshift.
+  * AWS RDS (Oracle, Microsoft SQL Server, MySQL, PostgreSQL, MariaDB)
+    * Use Multi-AZ RDS for high availability. If the primary DB fails, AWS will automatically switch your endpoint to the standby (Secondary DB). You don't have access to the standby (only AWS does). 
+    * For automated backups of RDS, copy the snapshots to the another region. 
+    * AWS RDS server (Read Replica) is available for MySQL, PostgreSQL and MariaDB. 
+    * you have asynchronous replication from primary DB to secondary DB. You now have access to secondary DB because you are given another endpoint.
+    * Use read replicas when you have performance problems on the primary DB. Use when your primary DB is getting a lot of hits. 
+  * DynamoDB
+    * Fully managed NoSQL database.
+    * You also have indexes- global and local secondary indexes.
+    * Highly available and durable
+    * Infrastructure scales automatically based on demand
+    * Before creation of the table you can choose autoscaling for read and write throuhputs.
+  * Aurora(MySQL and PostgreSQL compatible)
+    * MySQL workload. You want a faster MySQL engine. Better performance. Fully managed. Your IT management doen't have the time and resources for maintenance. High Availability. Low latency
+  * Redshift
+    * Columnar database: When you have aggregation for your data
+    * Data warehouse/ Petabyte database
+    * Data in redshift is stored column wise. SQLoriented databases-- Data is stored on disks row wise. Makes it easier to search.
+    * You can use Business Intelligence tools with the data. 
+    * Database recovery- You can enable cross region snapshots. You can restore the data into a new cluster with the snapshot data. 
+   
