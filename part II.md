@@ -268,5 +268,10 @@ Of late, the performance on the database has been slacking due to a high number 
 #### A customer has a single 3-TB volume on-premise that is used to hold a large repository of images and print layout files. This repository is growing at 500GB a year and must be presented as a single logical volume. The customer is becoming increasingly constrained with their local storage capacity and wants an offsite backup of this data, while maintaining low-latency access to their frequently accessed data. Which AWS Storage Gateway configuration meets the customer requirements?
   * Gateway-Cached Volumes with snapshots scheduled to Amazon S3
     * Gateway-cached volumes let you use Amazon S3 as your primary data storage while retaining frequently accessed data locally in your storage gateway. 
-  
+#### A company is planning to use the AWS ECS service to work with containers. There is a need for the least amount of administrative overhead while launching containers. How can this be achieved?
+  * Use the Fargate launch type in AWS ECS
+    * Fargate launch type allows you to run your containerized applications without the need to provision and manage the backend infrastructure. Just register your task definition and Fargate launches the container for you. 
+#### You are responsible for deploying a critical application to AWS. It is required to ensure that the controls set for this application meet PCI compliance. Also, there is need to monitor web application logs to identify any malicious activity. Which of the following services can be used to fulfill this requirements.
+  * Amazon CloudWatch Logs
+  * Amazon CloudTrial
  
