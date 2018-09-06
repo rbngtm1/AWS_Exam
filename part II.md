@@ -254,5 +254,9 @@ Of late, the performance on the database has been slacking due to a high number 
     * Multi-AZ databases are better for production environments rather than for development environments, so you can reduce costs by not using these for development environments.
 #### An application consists of a couple of EC2 Instances. One EC2 Instance hosts a web application and the other Instance hosts the database server. Which of the following changes can be made to ensure high availability of the database layer?
   * Have another EC2 instances in the another Availability Zone with replication configured.
+    * To ensure high availability, have the EC2 instances in another Availability Zone, so even if one goes down, the other one will still be available. 
+#### You are designing an architecture on AWS with disaster recovery in mind. Currently the architecture consists of an ELB and underlying EC2 Instances in a primary and secondary region. How can you establish a switchover in case of failure in the primary region?
+  * Use Route 53 Health Checks and then do a failover.
+    * If you have multiple resources that perform the same function, you can configure DNS failover so that Route 53 will route your traffic from an unhealthy resources to a healthy resource. 
   
  
