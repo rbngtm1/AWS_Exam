@@ -274,4 +274,20 @@ Of late, the performance on the database has been slacking due to a high number 
 #### You are responsible for deploying a critical application to AWS. It is required to ensure that the controls set for this application meet PCI compliance. Also, there is need to monitor web application logs to identify any malicious activity. Which of the following services can be used to fulfill this requirements.
   * Amazon CloudWatch Logs
   * Amazon CloudTrial
- 
+#### One plans on using SQS queues and AWS Lambda to leverage the serverless aspects of the AWS Cloud. Each invocation to AWS Lambda will send message to an SQS queue. In order for message to be sent, which of the following must be in place?
+  * An IAM Role with the required permissions.
+    * While working with AWS Lambda functions, if there is a need to access other resources, ensure that an IAM role is in place. 
+#### You have enabled CloudTrial logs for your company's AWS account. In addition, the IT Security department has mentioned that the logs needs to be encrypted. How can this be achieved?
+  * There is no need to do anything since the logs will already be encrypted.
+    * By default, CloudTrial log files are encrypted using Amazon S3 server-side encryption (SSE). You can also choose to encrypt your log files with an AWS Key Management Service (KMS).
+#### A company has set up their data layer in the S3. There are a number of requests which include read/write and updates to objects in an S3 bucket. Users sometimes complain that updates to an object are not being reflacted. The reason is:
+  * Updates are being made to the same key for the objects. 
+    * Updates made to objects in S3 follow an eventual consistency model. Hence, for object updates made to the same key, there can be a single delay when the updated object is provided back to the user on the next read request. 
+#### You plan on hosting a web application consisting of a web server and a database server. These servers are going to be hosted on different EC2 Instances in different subnets in a VPC. Which of the following can be used to ensure that the database server only allows traffic from the web server?
+  * Make use of Security Group
+    * helps to control traffic into an EC2 Instance
+ #### A company has a redshift cluster defined in AWS. The IT Operations team have ensured that both automated and manual snapshots are in place. Since the cluster is going to be run for a long duration of a couple of years, reserved instances have been purchased. There has been a recent concern on the cost being incurred by the cluster. Which of the following steps can be carried out to minimize the costs being incurred by the cluster?
+   * Delete the manual snapshots.
+     * Regardless of whether you enable automated snapshots, you can take a manual snapshot whenever you want. Amazon Redshift will never automatically delete a manual snapshot. Manual snapshots are retained even after you delete your cluster.
+#### You currently have a set of Lambda functions which have business logic embedded in them. You want customers to have the ability to call these functions via HTTPS. How can this be achieved?
+  * Use the API Gateway and provide integration with the AWS Lambda function
