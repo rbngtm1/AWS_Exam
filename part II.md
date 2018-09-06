@@ -233,6 +233,7 @@
 * a. A set of EC2 instances to transfer user uploaded videos to S3 buckets
 * b. A set of EC2 worker processes to process and publish the videos.
 * c. An Auto Scaling Group for the EC2 worker processes.
+**
 Which of the following can be added to the architecture to make it more reliable?
   * Amazon SQS
     * is used to decouple systems. It can store requests to process videos to be picked up by the worker processes.
