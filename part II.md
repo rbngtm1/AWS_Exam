@@ -217,4 +217,23 @@
   * Ensure that the security group allows Inbound SSH traffic from the IT Administrator's Workstation
     * Since, security group are stateful, we do not have to configure outbound traffic. What enters the inbound traffic is allowed in the outbound traffic too. 
     * The default network ACL is configured to allow all traffic to flow in and out of the subnets to which it is associated. Since the question does not mention that it is a custom VPC we would assume it be the default one. 
+#### A company has an on-premises infrastructure which they want to extend to the AWS Cloud. There is a need to ensure that communication across both environments is possible over the Internet. What would you create in this case to fulfill this requirement?
+  * Create a VPN connection between the on-premises and the AWS Environment
+    * AWS Direct connection between the on-premises and AWS Environment is not a better option because the question says **"Over the internet"** Direct connect does not involve the Internet.
+    * VPN connection can be configured in minutes and are good solution if you have an immediate need, have low to modest bandwidth requirement, and can tolerate the inherent variability in Internet-based connectivity. 
+#### A company wants to build a brand new application on the AWS Cloud. They want to ensure that this application follows the Microservices architecture. Which of the following services can be used to build this sort of architecture?
+  * AWS Lambda
+  * AWS ECS (Elastic Container Service)
+  * AWS API Gateway: Serverless component for managing access to APIs.
+#### A CloudFront distribution is being used to distribute content from an S3 bucket. It is required that only a particular set of users get access to certain content. How can this be accomplished?
+  * Create CloudFront signed URLs and then distribute these URLs to these users. 
+#### Your Development team wants to start making use of EC2 Instances to host their Application and Web servers. In the space of automation, they want the Instances to always download the latest version of the Web and Application servers when they are launched. As an architect, what would you recommend for this scenario?
+  * Ask the Development team to create scripts which can be added to the Users Data section when the instance is launched. 
+#### Your company has an application that takes care of uploading, processing and publishing videos posted by users. The current architecture for this application includes the following:
+* a. A set of EC2 instances to transfer user uploaded videos to S3 buckets
+* b. A set of EC2 worker processes to process and publish the videos.
+* c. An Auto Scaling Group for the EC2 worker processes.
+Which of the following can be added to the architecture to make it more reliable?
+  * Amazon SQS
+    * is used to decouple systems. It can store requests to process videos to be picked up by the worker processes.
  
