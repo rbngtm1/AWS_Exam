@@ -99,4 +99,86 @@
     * But let's say in 5 minutes, again your cloudwatch alarms have been triggered and Autoscaling again starts spinning up new servers.
     * So you have not allowed for the current infrastructure of 5 serveres to settle down. 
     * Cool down timer- Increase the timing period to allow more time for the infrastructure to settle down. The cloudwatch alarms if triggered can be ignored during this period. 
+ #### SQS Queue
+   * Front end server-->SQS Queue-->AutoScaling Group Instances
+   * can trigger scaling based on the number of message in the queue
+   * so if the number of message are going beyond a point, then do a scale up operation
+ #### ELastiCache
+   * Front end server-->ElastiCache-->Database Server
+   * Used when you want to cache frequently used data such as queries
+   * Add ElastiCache in front of Database Server
+ ### Security Practices
+ #### AWS CLoudTrial
+   * Used to monitor all API activity in an AWS Account.
+   * Its good for compliance purpose
+   * Also if you suspect any malicious activity in your account, check the Cloudtrial logs to see if an irregular API activity has been fired
+   * Enable Cloudtrial for all regions. All future regions also get covered. 
+#### IAM
+  * Use access with least privilege
+  * Use Multi-Factor Authentication
+  * Change the password policy.
+  * Disable the root access keys
+  * Buckets in S3
+    * Manage via Bucket Policy
+    * Use Bucket policy when giving access to external accounts
+    * Use Pre-signed URL's if you don't want to give public access to the bucket. And you want a selection of users to get access to the objects. 
+ ****
+   * IAM ROles
+     * Used for secure access to resources
+     * If you have an application on an EC2 Instance which needs to access a service like S3 or DynamoDB, then attach an IAM Role to the EC2 Instance with that specific privilege
+     * Access Keys are OK to use during development time, but not in deployment or production
+     * Even when using a Lambda function, if it accesses an external resource like DynamoDB or S3, ensure an IAM Role is attached to the Lambda function.
+ #### Network Security 
+   * Nat instance or Nat gateway is used to allow instances in a private subnet to access the Internet.
+   * If you want instances in a private subnet to access public resources like DynamoDB, S3, KMS, you have to use VPC Endpoints.
+   * VPC Gateway Endpoints- S3 and DynamoDB
+   * VPC Interface Endpoints- KMS
+   * For KMS, Create a VPC Endpoint, attach it to the VPC and make the instances in the private subnet access the resources via the endpoint.
+   * For Redshift, if you want the LOAD or COPY process to be private via a VPC, then enable Redshift Enhanced VPC Routing. 
+   * Monitoring IP addresses of traffic into your VPC- Use VPC Flow Logs
+   * Use a bastion host for administrators to administer instances in the private subnet.
+### Security for you VPC
+#### Security Groups
+  * Used to control traffic to your EC2 Instances
+  * By default all traffic is denied
+#### Network ACL's 
+  * When you want to limit traffic for a subnet
+  * Remember this will effect all instances in that subnet
+  * When you have malicious traffic from a set of EC2 Instances. Deny traffic based on the IP addresses.
+### NAT
+  * When would you use a NAT gateway
+    * When your NAT Instace is becoming a bottleneck.
+    * When you want completely managed service 
+  * When would you want to use a NAT instance
+    * If you want to use the server as a proxy server as well
+  * High Availability for NAT Instance
+    * Create an Autoscaling Group 
+    * Have Multiple NAT instances in multiple AZ
+  * High Availability for NAT Gateway
+    * Have Multiple NAT gateway in multiple AZ
+### Encryption
+#### EBS Volumes 
+  * You can Enable Encryption for EBS Volumes using the Customer Key defined in the KMS service.
+  * This needs to be done during the Volume creation time
+  * If there is already an existing volume, you can use Operating System Level tools like BitLocker for Windows for Encryption
+#### AWS RDS
+  * You can also enable Encryption of the AWS Relational database service, Aurora. This will automatically also encrypt all logs and snapshots. 
+#### DynamoDB
+  * You can also enable DynamoDB tables at table creation time
+#### S3
+  * Server Side Encryption
+    * Using AWS Managed Keys
+    * Using KMS Keys
+    * Using Customer Managed Keys when uploading the object.
+  * Client Side Encryption
+#### Key Mamagement Service
+  * Fully managed Key Service from AWS
+  * You can define Customer master keys 
+  * You can then use the keys for encryption
+#### Cloud HSM 
+  * This when you want complete control of your keys
+  * Sometimes required from a compliance perspective
+  * It's a hardware device that can get accees via an IP through your VPC. 
+### Performance for Services
+   
    
