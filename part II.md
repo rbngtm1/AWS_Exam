@@ -295,4 +295,17 @@ Of late, the performance on the database has been slacking due to a high number 
   * Use the Amazon Elastic Container Service for Kubernetes (EKS)
     * Amazon EKS is a managed service that makes it easy to run Kubernetes on AWS without needing to install and operate your own Kubernetes cluster.
     
-
+#### You create an Auto Scaling Group  which is used to spin up instances On Demand. As an architect, you need to ensure that the instance are pre-installed with a software when they are launched. What are the ways in which you can achieve this?
+  * Add the scripts for the installation in the User data section
+  * Create a golden image and then create a launch configuration
+    * The User data section of an instance launch can be used to pre-configure software after the instance is initially booted.
+    * You can create AMI or Golden Image with the already installed software, then create a launch configuration which can be used by Auto Scaling Group. 
+#### You need to ensure that data stored in S3 is encrypted but do not want to manage the encryption keys. Which of the following encryption mechanism can be used in this case?
+  * SSE- S3
+#### You have a requirement for deploying an existing Java based application to AWS. There is a need for automatic scaling for the underlying environment. Which of the following can be used to deploy this environment in the quickes way possible?
+  * Use the Elastic Beanstalk service to provision the environment. 
+    * AWS ELastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS. 
+#### You have been tasked with architecting an application in AWS. The architecture would consist of EC2, the Classic Load Balancer, Auto Scaling and Route 53. There is a directive  to ensure that BLue-Green deployments are possible in this architecture. Which routing policy could you ideally use in Route 53 for achieving Blue-Green deployment?
+  * Weighted
+    * Weighted routing lets you associate multiple resourcese with a single domain name(example.com) or subdomain name(hello.example.com) and choose how many traffic is routed to each resource. This can be useful for a variety of purposes, including load balancing and testing new versions of software. 
+    
