@@ -51,4 +51,52 @@
     * Data in redshift is stored column wise. SQLoriented databases-- Data is stored on disks row wise. Makes it easier to search.
     * You can use Business Intelligence tools with the data. 
     * Database recovery- You can enable cross region snapshots. You can restore the data into a new cluster with the snapshot data. 
+ ### Compute
+ 
+ #### Instance pricing
+   * On-Demand Instances
+     * Good for development and test environments. When you want instances for a certain period of time. 
+   * Spot Instances
+     * Batch processing activities. Activities that can survive an interruption. 
+   * Reserved Instances
+     * When you know you need servers 24*7 and all throughout the year, you can save cost by purchasing Reserved capacity. 
+   * Dedicated Instances
+     * Runs on hardware that is dedicated for the customer. But if the customer has multiple AWS accounts, then instances can share the same hardware. 
+   * Dedicated Hosts- You have control over the physical server. If you have a third party application wherein the licensing is based on the number of cores. Of if your security policy mandes that you cannot share infrastructure. 
+#### Serverless Compute
+  * AWS Lambda
+    * You don't have to manage the infrastructure
+    * only get billed for how much you use.
+    * Easy to port existing code and save on costs.
+    * Normally used in conjunction with API Gateway
+    * You can create API's which can be invoked by customers.
+    * The API'can then call Lambda function 
+#### Elastic Container Services
+    * Used for orchestration
+    * Instead of you installing orchestration services like Kubernetes on EC2, let the ECS manage it for you.
+    * You define type that gets the images
+    * Deploys the containers on Instances
+    * You can then access via a Service
+    * You also have autoscaling capabilities
+### Elasticity and Scalability
+  * For Elasticity- Use a load balancer
+  * For scalability use an AutoScaling Group 
+  * You can launch instances in an AutoScaling group based on different metrics.
+  * In addition to the normal metrics such as CPU utilization, you can define your custom metrics. 
+#### Autoscaling Policies
+  * Scheduled Scaling Policy
+    * Promotional event- You need to ensure infrastructure is scaled before the event
+    * Team that experiences performance issues only at a certain time- Heavy utilization early in the morning. 
+  * Dynamic Scaling Policy 
+    * Scale dynamically based on metrics 
+    * If the CPU utilization is high
+    * Based on custom metrics
+  * Cool down timing period 
+    * 3 servers
+    * Performance starts taking a hit. You have a cloudwatch alarm that gets triggered at 9:00
+    * Autoscaling spins up 2 more servers. Total of 5 servers.
+    * Now new software needs to be installed. Scripts need to run to ensure the new servers can start accepting requests. This takes 10 minutes.
+    * But let's say in 5 minutes, again your cloudwatch alarms have been triggered and Autoscaling again starts spinning up new servers.
+    * So you have not allowed for the current infrastructure of 5 serveres to settle down. 
+    * Cool down timer- Increase the timing period to allow more time for the infrastructure to settle down. The cloudwatch alarms if triggered can be ignored during this period. 
    
