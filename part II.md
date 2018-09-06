@@ -233,8 +233,26 @@
 * a. A set of EC2 instances to transfer user uploaded videos to S3 buckets
 * b. A set of EC2 worker processes to process and publish the videos.
 * c. An Auto Scaling Group for the EC2 worker processes.
-**
 Which of the following can be added to the architecture to make it more reliable?
   * Amazon SQS
     * is used to decouple systems. It can store requests to process videos to be picked up by the worker processes.
+#### You have a business-critical two-tier web application currently deployed in 2 Availability Zones in a single region, using Elastic Load Balancing and Auto Scaling. The app depends on synchronous replication at the database layer. The application needs to remain fully available even if one application AZ goes offline and if Auto Scaling cannot launch new instances in the remaining AZ. How can the current architecture be enhanced to ensure this?
+  * Deploy in 3 AZ with Auto Scaling minimum set to handle 50 per cent peak load per zone. 
+    * Bcoz, we need to maintain 100% availability. 
+#### You have the following architecture deployed in AWS:
+* a. A set of EC2 instances which sit behind an ELB
+* b. A database hosted in AWS RDS.
+**** 
+Of late, the performance on the database has been slacking due to a high number of read requests. Which of the following can be added to the architecture to alleviate the performance issue?
+  * Use ElastiCache in front of the database.
+    * ElastiCache is an in-memory-cache which can be used to cache common read requests.
+#### An application is currently hosted on an EC2 Instances which has attached EBS Volumes. The data on these volumes is frequently accessed. But after a duration of a week, the documents needs to be moved to infrequent access storage. Which of the following EBS volume type provides cost efficiency for the moved documents?
+  * EBS Cold HDD(sc1)
+    * Most cost efficient
+#### A company is running three production web server reserved EC2 instances with EBS-backed root volumes. These instances have a consistent CPU load of 80%. Traffic is being distributed to these instances by an Elastic Load Balancer. They also have production and development Multi-AZ RDS MySQL databases. What recommendation would you make to reduce cost in this environment without affecting availabilty of mission-critical systems?
+  * Consider not using a Multi-AZ RDS deployment for the development database. 
+    * Multi-AZ databases are better for production environments rather than for development environments, so you can reduce costs by not using these for development environments.
+#### An application consists of a couple of EC2 Instances. One EC2 Instance hosts a web application and the other Instance hosts the database server. Which of the following changes can be made to ensure high availability of the database layer?
+  * Have another EC2 instances in the another Availability Zone with replication configured.
+  
  
