@@ -22,7 +22,13 @@
       * In database server, select statement is for (Read opearation-- search for data ) and Update, Insert and Delete statements are (Write Opeartion) 
       * As database needs to access volumes for read and write operations, I/O Controller(device)- takes a lot of strain for these operations. If the reads and writes are too much the controller just starts lagging behind. 
   * Throughput Optimized HDD
+    * If you have EC2 instance, Processing server, Processing videos for files with large size, streaming videos or high throuhput.
+      * Cost effective than Provisioned IOPS
+      * 400 MiB/s
   * Cold HDD
+    * Infrequently accessed storage
+**** 
+* If you have high frequency for 2 months, you can even store the videos for 2 months on Throughput Optimized HDD. After 2 months, have a script which transfers the videos to Cold HDD.
 
 ### Databases
   * AWS RDS, DynamoDB, Aurora and Redshift.
