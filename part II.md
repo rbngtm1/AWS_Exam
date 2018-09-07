@@ -309,3 +309,12 @@ Of late, the performance on the database has been slacking due to a high number 
   * Weighted
     * Weighted routing lets you associate multiple resourcese with a single domain name(example.com) or subdomain name(hello.example.com) and choose how many traffic is routed to each resource. This can be useful for a variety of purposes, including load balancing and testing new versions of software. 
     
+ #### You need to have a Data storage layer in AWS. Following are the key requirements:
+   * a. Storage of JSON documents
+   * b. Availability of Indexes
+   * c. Automatic scaling
+   * Which of the following would be an ideal storage layer for the above requirements?
+     * DynamoDB.
+ #### Your company is planning on hosting their development, test and production applications on EC2 Instances in AWS. They are worried about how access control would be given to relevant IT Admins for each of the above environments. As an architect, what would you suggest for managing the relevant accesses?
+   * Add tags to the instances marking each environment and then segregate access using IAM Policies. 
+     * You can quickly identify the resource based on tags. Tag consist of a key and an optional value. 
