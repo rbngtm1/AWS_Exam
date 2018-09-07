@@ -325,4 +325,6 @@ Of late, the performance on the database has been slacking due to a high number 
 #### You work for a large company having multiple applications which are very different from each other. These are built using different programming languages. How can you deploy these applications as quickly as possible?
   * Develop each app in a separate Docker container and deploy using Elastic Beanstalk
     * With Docker containers you can define your own runtime environment, choose your own platform, programming language. 
-#### You are designing a system 
+#### You are designing a system which needs at minimum, 8 m4.large instances operating to service traffic. While designing a system for high availability in the us-east-1 region having 6 AZ, your company needs to be able to handle the death of a full AZ. How should you distribute the servers to save as much cost as possible, assuming all of the EC2 nodes are properly linked to an ELB? Your VPC account can utilize us-east-1's AZ a through f, inclusive 
+  * 2 servers in each of AZ's a through e, inclusive
+    * with this soln, you can have minimum of 8 servers even if one AZ goes down. 
