@@ -318,3 +318,11 @@ Of late, the performance on the database has been slacking due to a high number 
  #### Your company is planning on hosting their development, test and production applications on EC2 Instances in AWS. They are worried about how access control would be given to relevant IT Admins for each of the above environments. As an architect, what would you suggest for managing the relevant accesses?
    * Add tags to the instances marking each environment and then segregate access using IAM Policies. 
      * You can quickly identify the resource based on tags. Tag consist of a key and an optional value. 
+#### You are performing a Load Testing exercise on your application hosted on AWS. While testing your Amazon RDS MySql DB instance, you notice that your application becomes non responsive when you reach 100% CPU utilization. Your application is read-heavy. What methods will help your data-tier to meet the application's needs? 
+  * Add Amazon RDS DB Read Replicas, and have your application direct read queries to them.
+  * Use ElastiCache in front of AWS RDS DB to cache common queries
+  * Shard your data set among multiple Amazon RDS DB Instance. 
+#### You work for a large company having multiple applications which are very different from each other. These are built using different programming languages. How can you deploy these applications as quickly as possible?
+  * Develop each app in a separate Docker container and deploy using Elastic Beanstalk
+    * With Docker containers you can define your own runtime environment, choose your own platform, programming language. 
+#### You are designing a system 
