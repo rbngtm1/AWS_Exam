@@ -340,3 +340,45 @@ Of late, the performance on the database has been slacking due to a high number 
   * Change the Inbound NACL to deny access from the suspecting IP.
 #### Videos are uploaded to an S3 bucket, and you need to provide access to users to view the same. What is the best way to do so, while maintaining a good user experience for all users regardless of the region in which they are located?
   * Use CloudFront with S3 bucket as a source. 
+#### An organization has a requirement to store 10TB worth of scanned files. They are required to have a search application in place to search through the scanned files. Which of below mentioned options is ideal for implementing the search facility?
+  * Use S3 with standard redundancy to store and serve the scanned files. Use CloudSearch for query processing, and use Elastic Beanstalk to host the website across multiple Availability Zones.
+#### A concern raised in your company is that developers could potentially delete production baseed EC2 resources. As a Cloud Admin, which of the below options would you choose to help alleviate this concern?
+  * Tag the production instances with a production-identifying tag and add resource-level permissions to the developers with an explicit deny on the terminal API call to instances with the production tag
+  * Create a seperate AWS account and add developers to that account
+#### You are an architect for a gaming application which is in the desing phase. Which of the following services can be used to ensure optimal performance and least latency for gaming users?
+  * AWS ElastiCache
+    * Amazon ElastiCache offers fully managed Redis and Memcached. Seamlessly deploy, operate, and scale popular open source compatible in-memory data stores. Popular choice for Gaming, IOT apps, Ad-Tech, Financial Services and Healthcare.
+#### An organization planning to use AWS for their production roll out, wants to implement automation for deployment such that it will automatically create a LAMP stack, download the latest PHP installable from S3 and setup the ELB. Which of the below metioned AWS Service meets the requirement for making an orderly deployment of the software?
+  * ElastiBeanstalk
+    * We can simply upload code and Elasti Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, Auto-Scaling to application Health Monitoring. 
+#### Your current log analysis application takes more than four hours to generate a report of a top 10 users of your web application. You have been asked to implement a system that can report this information in real time, ensure that the report is always up to date, and handle increases in the number of requests to your web application. Choose the option that is cost-effective and can fulfill the requirements.
+  * Post your log data to Amazon Kinesis data stream, and subscribe your log-processing application so that is configured to process your logging data. 
+#### There is a requirement to load a lot of data from your on-premise network on to AWS Redshift. Which of the below options can be used for this data transfer? 
+  * Direct Connect
+  * Snowball
+#### As the cloud administrator of your company, you notice that one of EC2 instances is restarting frequently. There is a need to troubleshoot and analyse the system logs. What can be used in AWS to store and analyze the log files from the EC2 Instances?
+  * AWS CLoudWatch Logs
+#### Your company has migrated their production environment into AWS VPC 6 months ago. As a cloud architect, you are required to revise the infrastructure and ensure that it is cost-effective in the long term. There are more than 50 EC2 instances that are up and running all the time to support the business operation. What can you do to lower cost?
+  * Reserved Instance
+    * when you have instances that will be used continuously and throughout the year.
+#### You have configured an Auto-scaling group for which the minimum running instance is 2 and maximum running instance is 10. For the past 30 minutes, all five instances have been running at 100 CPU utilization; however, the AutoScaling group has not added any more instances to the group. What is the most likely cause for this?
+  * You already have 20 on-demand instances
+  * The Auto Scaling group's scale up policy has not yet been reached
+    * By default, you can run upto 20 on-demand EC2 instances. If you need more, you have to complete a requisition form and submit it to AWS. 
+#### A company has an application hosted in AWS. This application consists of EC2 instances that sit behind ELB with EC2 instances. The following are requirements from an administrative perspective
+  * a. Must be able to collect and analyze logs with regard to ELB's performance
+  * b. Ensure that notifications are sent when the latency goes beyond 10 seconds.
+  * Which of the following can be used to achieve this requirements?
+    * Use CloudWatch for monitoring
+    * Enable the logs on the ELB and then investigate the logs whenever there is an issue. 
+ #### Your company would like to leverage the AWS storage option and integrate it with the current on-premise infrastructure. Besides, due to business requirements, low latency access to all the data is a must. Which of the following options would be best suited for this scenario?
+  * Configure Storage Gateway Stored Volume
+    If you need low-latency access to your database, first configure your on-premise gateway to store all your data locally. Then asynchronously back up point-in-time snapshots of this data to Amazon S3. This configuration provides durable and inexpensive offsite backups that you can recover to your local data center or Amazon EC2.
+#### An IT company would like to secure their resources in their AWS Account. Which of the following options is able to secure data at rest and in transit in AWS?
+  * Encrypt all EBS volumes attached to EC2 instances
+  * Use Server-Side Encryption for S3
+  * Use SSL/HTTPS when using the Elastic Load Balancer
+#### Your company is hosting an appication in AWS. The application is read intensive and consists of a set of web servers and AWS RDS. It has been noticed that the response time of the application decreases due to the load on the AWS RDS instance. Which of the following measures can be taken to scale the data tier?
+  * Create a Amazon DB read replica. Configure the application layer to query the Read Replicas for query needs.
+  * Use ElastiCache in front of your Amazon RDS DB to cache common queries
+    * RDS read replica provides enhanced performance and durability for database(DB) instances. This replication feature makes it easy to elastically scale out beyond the capacity constrants of a single DB Instance for read-heavy database workloads.
