@@ -328,3 +328,15 @@ Of late, the performance on the database has been slacking due to a high number 
 #### You are designing a system which needs at minimum, 8 m4.large instances operating to service traffic. While designing a system for high availability in the us-east-1 region having 6 AZ, your company needs to be able to handle the death of a full AZ. How should you distribute the servers to save as much cost as possible, assuming all of the EC2 nodes are properly linked to an ELB? Your VPC account can utilize us-east-1's AZ a through f, inclusive 
   * 2 servers in each of AZ's a through e, inclusive
     * with this soln, you can have minimum of 8 servers even if one AZ goes down. 
+#### An application currently consists of an EC2 Instances hosting a Web application. The Web application connects to an AWS RDS database. Which of the following can be used to ensure that database layer is highly available?
+  * Enable Multi-AZ for the AWS RDS database.
+#### An application currently accepts users to upload files to an S3 bucket. You want to ensure that the file name for each uploaded file is stored in DynamoDB table. How can this be achieved? 
+  * Create a AWS Lambda function to insert the required entry for each uploaded file
+  * Add an event with notification send to Lambda.
+#### An application allows users to upload images to an S3 bucket. Initially these images will be downloaded quite frequently, but after some time, the images might only be accessed once a week and the retrieval time should be as minimal as possible. What could be done to ensure a cost effective solution?
+  * Store the objects in S3-standard storage
+  * Create a Lifecycle Policy to transfer the objects to S3- Infrequent Access storage after a certain duration of time.
+#### A company hosts a popular web application that connects to an Amazon RDS MySQL DB instance running in a private VPC subnet created with default ACL settings. The IT Security department has identified a DDoS attack from a suspecting IP. How can you protect the subnets from this attack?
+  * Change the Inbound NACL to deny access from the suspecting IP.
+#### Videos are uploaded to an S3 bucket, and you need to provide access to users to view the same. What is the best way to do so, while maintaining a good user experience for all users regardless of the region in which they are located?
+  * Use CloudFront with S3 bucket as a source. 
