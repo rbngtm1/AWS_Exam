@@ -59,3 +59,6 @@
 #### Your company stores a large set of files in Amazon S3. They need to ensure that if any new files are added to an S3 bucket, an event notification would be sent to the IT admin staff. Which of the following could be used to fulfill the requirement?
   * Create an SNS topic
   * Add an event notification to the S3 bucket ( not to S3 object)
+#### Your company is planning on migrating some code form their on-premises infrastructure onto AWS. They want to ensure to limit the amount of maintenance that would be required for the underlying infrastructure. Which of the following would they choose for hosting the code base?
+  * AWS Lambda
+    * AWS Lambda is a compute service that lets you run code without provisioning or managing servers. 
