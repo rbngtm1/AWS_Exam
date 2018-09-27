@@ -39,5 +39,12 @@
   * Ensure that the Instances has a Public or Elastic IP
   * Ensure to modify the Security groups
     * We will not modify NACL because by default NACL rules will allow all traffic
-#### Your company has a set of EBS volumes and a set of adjoining EBS snapshots. They want to minimize the costs for the underlying EBS snapshots. Which of the following approaches provides the lowest 
-  
+#### Your company has a set of EBS volumes and a set of adjoining EBS snapshots. They want to minimize the costs for the underlying EBS snapshots. Which of the following approaches provides the lowest cost of Amazon ELastic Store snapshots while giving you the ability to fully restore data?
+  * Maintain a single snapshot the latest snapshot is both incremental and complete.
+#### A company is planning on setting up a web-based application. They need to ensure that users across the world have the ability to view the pages from the web site with the least amount of latency. How can you accomplish this?
+  * Place cloudfront distribution in front of the web application. 
+    * Place ElastiCache only in front of database layer.
+#### A company is hosting their company website on a cluster of web servers that are behind the public facing ELB. The customer also uses Amazon Route 53 to manage their public DNS. How should Route 53 be configured to ensure the custom domain is made to point to the load balancer. 
+  * Create an alias for CNAME record to the load balancer DNS name
+  * Ensure that a hosted zone is in place
+####   
