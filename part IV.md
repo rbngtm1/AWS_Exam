@@ -47,4 +47,15 @@
 #### A company is hosting their company website on a cluster of web servers that are behind the public facing ELB. The customer also uses Amazon Route 53 to manage their public DNS. How should Route 53 be configured to ensure the custom domain is made to point to the load balancer. 
   * Create an alias for CNAME record to the load balancer DNS name
   * Ensure that a hosted zone is in place
-####   
+#### A customer is hosting their company website on a cluster of web servers that are behind a public-facing load balancer. The web application interfaces with a AWS RDS database. The management has specified that the database be available in case of a hardware failure on the primary database. The secondary needs to be made available in the least amount of time. Which of the following would you opt for?
+  * Enabled Multi-AZ failover
+    * Snapshot of database and read replica are not a suitable option here because it would take more time than just enabling Multi-AZ
+#### You are an architect for your company. Your IT admin staff needs access to newly created EC2 Instances for administrative purposes. Which of the following needs to be done to ensure that the IT admin staff can successfully connect via port 22 on the EC2 instances
+  * Adjust the instance's Security Group to permit ingress traffic over port 22 from your IP.
+    * A security group acts as a virtual firewall that controls the traffic for one or more instances. When you launch an instances, you associate one or more security groups with the instances. You add rules to each security group that allow traffic to or from its associated instances. 
+#### You work as an architect for a company. There is a requirement for an application to be deployed on a set of EC2 Instances. These would be part of a compute cluster that requires low inter-node latency. Which of the following would you use for this requirement?
+  * Cluster Placement Groups
+    * Cluster placement groups are recommended for applications that benefit from low network latency, high network throughput, or both, and if the majority of the network traffic is between the instances in the group. 
+#### Your company stores a large set of files in Amazon S3. They need to ensure that if any new files are added to an S3 bucket, an event notification would be sent to the IT admin staff. Which of the following could be used to fulfill the requirement?
+  * Create an SNS topic
+  * Add an event notification to the S3 bucket ( not to S3 object)
