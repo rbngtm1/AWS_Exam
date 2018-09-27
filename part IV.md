@@ -38,5 +38,6 @@
 #### A company has setup some EC2 Instances in a VPC with the default Security group and NACL settings. They want to ensure that IT admin staff can connect to the EC2 Instances via SSH. As an architect what would you ask the IT admin team to do to ensure that they can connect to the EC2 Instance from the Internet. 
   * Ensure that the Instances has a Public or Elastic IP
   * Ensure to modify the Security groups
-    * We will not modify NACL because by default NACL will 
+    * We will not modify NACL because by default NACL rules will allow all traffic
+#### Your company has a set of EBS volumes and a set of adjoining EBS snapshots. They want to minimize the costs for the underlying EBS snapshots. Which of the following approaches provides the lowest 
   
