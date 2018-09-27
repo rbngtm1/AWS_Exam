@@ -16,4 +16,17 @@
   * Allow inbound access on port 443 for internet
     * Security group are stateful, you don't need to define the rule for outbound traffic. 
 #### Create a bastion host in the public subnet and make IT admin staff use this as a jump server to backed instances to ensure secure administer of IT administrators for instances in the VPC
+#### A customer needs corporate IT governance and cost oversight of all AWS resources consumed by its divisions. Each division has their own AWS account and there is a need to ensure that the security policies are kept in place at the Account Level. How can you achieve this?
+  * Use AWS Organizations
+  * Use Service control policies
+    * SCPs allow you to define which AWS service APIs can and cannot be executed by AWS IAM enties.
+#### A company is planning on migrating their infrastructure to AWS. For the data stores, the company does not want to manage the underlying infrastructure. Which of the following would be ideal for this scenario.
+  * AWS S3
+  * AWS DynamoDB
+#### Your company has a set of resources defined in AWS. These resources consist of applications hosted on EC2 Instances. Data is stored on EBS Volumes and S3. The company mandates that all data should be encrypted at rest. How can you achieve this?
+  * Enable EBS Encryption
+  * Enable S3 server-side Encryption
+#### Your company has a set of VPC's. There is now a requirement to establish communication across the instances in the VPC's. Your supervisor has asked you to implement the VPC peering connection. Which of the following considerations would you keep in mind for VPC Peering. 
+  * Ensuring that the VPC's don't have overlapping CIDR blocks
+  * Ensuring that no on-premise communication is required via transitive routing
 #### 
