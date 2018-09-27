@@ -29,4 +29,14 @@
 #### Your company has a set of VPC's. There is now a requirement to establish communication across the instances in the VPC's. Your supervisor has asked you to implement the VPC peering connection. Which of the following considerations would you keep in mind for VPC Peering. 
   * Ensuring that the VPC's don't have overlapping CIDR blocks
   * Ensuring that no on-premise communication is required via transitive routing
-#### 
+#### You have been instructed to establish a successful site-to-site VPN connection from your on-premise network to the VPC. As an architect, which of the following pre-requisities should you ensure are in place for establishing the site-to-site VPN connection. 
+  * A public IP address on the customer gateway for the on-premise network
+  * A virtual private gateway attached to the VPC
+#### Your company wants to enable encryption of services such as S3 and EBS volumes so that the data it maintains is encrypted at rest. They want to have complete control over the keys and the entire lifecycle around the keys. How can you accomplish this?
+  * Use the HSM Module
+    * AWS CloudHSM is a cloud-based hardware security module(HSM) that enables you to easily generate and use your own encryption.
+#### A company has setup some EC2 Instances in a VPC with the default Security group and NACL settings. They want to ensure that IT admin staff can connect to the EC2 Instances via SSH. As an architect what would you ask the IT admin team to do to ensure that they can connect to the EC2 Instance from the Internet. 
+  * Ensure that the Instances has a Public or Elastic IP
+  * Ensure to modify the Security groups
+    * We will not modify NACL because by default NACL will 
+  
