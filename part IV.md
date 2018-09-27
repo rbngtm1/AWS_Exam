@@ -62,3 +62,28 @@
 #### Your company is planning on migrating some code form their on-premises infrastructure onto AWS. They want to ensure to limit the amount of maintenance that would be required for the underlying infrastructure. Which of the following would they choose for hosting the code base?
   * AWS Lambda
     * AWS Lambda is a compute service that lets you run code without provisioning or managing servers. 
+#### A company has an AWS account that contains three VPCs (Dev, Test, and Prod) in the same region. There is a requirement to ensure that instances in the Development and Test VPC can access resources in the Production VPC for a limited amount of time. Which of the following would be the ideal way to get this in place?
+  * Create a seperate VPC peering connection from Development to Production and from Test to the Production.
+    * VPC peering can be between your own VPCs in same region, or within a VPC in another AWS account, or in different regions. 
+#### You are designing a application architecture for a company. The architecture is going to consist of a web tier that will be hosted on EC2 instances placed behind an ELB. Which of the following would be considered important when considering what should the specification for the components of the application architecture?
+  * Determine the required I/O operations
+  * Determining the minimum memory requirements for an application 
+    * You should decide on what are the requirements for the underlying EC2 Instances. You can then choose the Instance type for the underlying EC2 Instance.
+#### Your company is planning on moving to the AWS Cloud. There is a strict compliance policy that mandates that data should be encrypted at rest. As an AWS Solution  architect, you have been tasked to put the organization data on the cloud and also ensure that all compliance requirements have been met. Which of the below needs to be part of the implementation plan to ensure compliance with the security requirements.
+  * Ensure that all EBS Volumes are encrypted
+  * Ensure that server-side encryption is enabled for S3 buckets. 
+#### Your company currently has a set of virtual servers that need to be migrated to the AWS Cloud. These instances are normally 70%utilized and used throughout most of the year. As a solution architect which of the following instance pricing model would you suggest?
+  * Reserved Instance
+    * On-demand Instance- Pay, by the second, for the instances that you launch
+    * Reserved Instances- Purchase, at a significant discount, instances that are always available, for a term from one to three years.
+    * Scheduled Instances- Purchase instances that are always available on specified recurring schedule, for a one-year term.
+    * Spot Instances- Request unused EC2 instances, which can lower your Amazon EC2 costs significantly.
+    * Dedicated Host- Pay for the physical host that is fully dedicated to running your instances, and bring your existing per-socket, per-core, or per -VM software licenses to reduce costs. 
+    * Dedicated Instances- Pay, by the hour, for instances that run on single-tenant hardware. 
+#### You have a read intensive application hosted in AWS. The application is currently using the MySQL RDS feature in AWS. The cloudwatch metrics is showing high read throughput on the database and is causing performance issues on the database. Which of the following can be used to reduce the read throughput on the MySQL database?
+  * Enable Read Replica's and offload the reads to the replica
+    * asychronous replication for enhanced performance and durability of (DB) instances; ideal storage mechanism which require high read throughput.
+#### Your company is planning on setting up a VPC with private and public subnets and then hosting EC2 Instances in the subnet. It has to be ensured that instances in the private subnet can download updates from the internet. Which of the following needs to be part of the architecture for this requirement?
+  * NAT Gateway
+    * You can use a Network Address Translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances. 
+    
