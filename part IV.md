@@ -86,4 +86,9 @@
 #### Your company is planning on setting up a VPC with private and public subnets and then hosting EC2 Instances in the subnet. It has to be ensured that instances in the private subnet can download updates from the internet. Which of the following needs to be part of the architecture for this requirement?
   * NAT Gateway
     * You can use a Network Address Translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances. 
+#### When to use NLB, Classic LB or ALB
+  * NLB supports TCP, ALB supports HTTP and HTTPS. In, NLB source IP of the sender will be preserved and in case of ALB it gets modified.
+  * Classic LB supports TCP, SSL, HTTP and HTTPs.
+  * SSL offloading and path based routing or host based routing can only be done using application load balancer. 
+  * Static IP address is only supported in NLB
     
