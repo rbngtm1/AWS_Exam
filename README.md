@@ -237,7 +237,8 @@
   * Source: The ID of your webserver SG Protocol: TCP PortRange: 1433 Allow inbound Microsoft SQL Server access from the web services associated with the WebServer SG security group
   * Source: The ID of your webserver SG Protocol: TCP PortRange: 3306 Allow inbound MySQL Server access from the web services associated with the WebServer SG security group
 
-
+#### Amazon Inspector
+  * is an automated security assessment service that helps improve the security and compliance of application deployed on AWS. It automatically assesses applications for vulnerabilities or deviations from best practices. 
   
 
   
