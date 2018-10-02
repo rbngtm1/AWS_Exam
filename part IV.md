@@ -91,4 +91,12 @@
   * Classic LB supports TCP, SSL, HTTP and HTTPs.
   * SSL offloading and path based routing or host based routing can only be done using application load balancer. 
   * Static IP address is only supported in NLB
-    
+#### Your company has an AWS account and a lot of resources defined in the Frankfurt region. They want to track the resources to monitor if any charges are made to the resources. Which of the following should be used for this purpose?
+  * AWS Config 
+    * is a service that enables you to assess, audit, and evaluate the configuration of your AWS resources. Config continuously monitors and records your AWS resource configuration and allows you to automate  the evaluation of recorded configuration against desired configuration. 
+#### A company is planning on hosting an application with the below architecture: 1. A lambda function which reads metadata of objects from an S3 bucket, 2. The lambda function then stores the metadata in Dyanamo DB and AWS RDS- MySQL. Which of the following needs to be in place to high availability of all components in the system?
+  * Enabling Multi-AZ for the MySQL database
+    * Multi-AZ RDS automatically provisions and maintains a sychronous standby replica in different AZ.
+#### A company has a set of EC2 instances hosting a revenue generating applications. Some of the data on the attached EBS volumes are critical to retain. Hence it has to be ensured that even after the instance are terminated, the EBS volumes will still remain inact. Which of the following needs to be done to ensure this requirement can be met?
+  * Make the attribute of DeleteOnTermination for the EBS volume to false 
+    * When an instance is terminated, EC2 uses the value of the DeleteOnTermination attribute for each attached EBS volume to determine whether to preserve or delete the volume when the instance is terminated. By default, the DeleteOnTermination attribute for root volume is set to true, but it is set to false for all other volume types. 
