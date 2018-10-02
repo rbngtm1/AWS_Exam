@@ -140,3 +140,5 @@
       * Use Server-Side Encryption with Amazon S3-Managed Keys(SSE-S3) - Each object is encrypted with a unique key employing strong multi-factor encryption. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates.
       * Use Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS) - similar to SSE-S3, but with some additional benefits along with some additional charges for using this service. 
       * Use Server-side Encryption with Customer-Provided Keys (SSE-C) - You manage the encryption keys and Amazon S3 manages the encryption, as it writes to disks, and decryption, when you access your objects. 
+#### Your company has a series of web sites hosted in AWS. They need to ensure that users from the Europe region are directed to the website www.demo.com for regulatory purpose. Which of the following can help in this regard?
+  * Using the Route 53 service
