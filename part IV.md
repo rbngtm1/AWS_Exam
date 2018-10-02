@@ -133,3 +133,10 @@
     * Security group is not suitable option because it can only allow, but not deny traffic.
     * VPC flow logs is not suitable option because it is used for monitoring your network traffic into the VPC.
     * AWS CloudTrail is not suitable option because it is used for API Monitoring
+#### Your company is planning to store sensitive documents in a bucket in the S3. They need to ensure that all objects are encrypted at rest in the bucket. Which of the following can help accomplish this?
+  * Ensure that the default encrytion is enabled for the S3 buckets.
+  * Ensure to change the configuration of the buckets to use a KMS key to encrypt the objects. 
+    * You have three mutually exclusive options depending on how you choose to manage the encryption keys.
+      * Use Server-Side Encryption with Amazon S3-Managed Keys(SSE-S3) - Each object is encrypted with a unique key employing strong multi-factor encryption. As an additional safeguard, it encrypts the key itself with a master key that it regularly rotates.
+      * Use Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS) - similar to SSE-S3, but with some additional benefits along with some additional charges for using this service. 
+      * Use Server-side Encryption with Customer-Provided Keys (SSE-C) - You manage the encryption keys and Amazon S3 manages the encryption, as it writes to disks, and decryption, when you access your objects. 
