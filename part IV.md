@@ -100,3 +100,36 @@
 #### A company has a set of EC2 instances hosting a revenue generating applications. Some of the data on the attached EBS volumes are critical to retain. Hence it has to be ensured that even after the instance are terminated, the EBS volumes will still remain inact. Which of the following needs to be done to ensure this requirement can be met?
   * Make the attribute of DeleteOnTermination for the EBS volume to false 
     * When an instance is terminated, EC2 uses the value of the DeleteOnTermination attribute for each attached EBS volume to determine whether to preserve or delete the volume when the instance is terminated. By default, the DeleteOnTermination attribute for root volume is set to true, but it is set to false for all other volume types. 
+#### A company has an application that needs to be hosted on an EC2 Instances. The general amount of throughput data will be in the range of 400-500 MiB/s from the application. Which of the following should be used as the the storage type for the underlying EC2 Instace with Cost-effective manner?
+  * Throughput Optimized HDD
+    * When you want high throughput, you should choose using the Throughput Optimized EBS Volume. 
+#### Your company is currently hosting an application on their On-premise environment. The company has developed this application inhouse. Consulting companies then use this application via API calls. You now need to consider moving this application to AWS. Which of the following services would best be suited in the architecture design, which would also help deliver a cost-effective solution. 
+  * AWS Lambda
+  * AWS API-Gateway
+#### A company has an Amazon Aurora cluster setup. They have setup a Lambda function which needs to insert records into a DynamoDB table. The Amazon Aurora cluster needs to invoke the Lambda as a stored procedure. Which of the following need to be in place for this setup to work. 
+  * Ensure that the Amazon Aurora cluster has an IAM Role which allows it to invoke Lambda functions
+  * Allow the Amazon AUrora cluster to allow outbound communication to the lambda function
+#### Your application consists of a set of EC2 instances which are spun up as part of an AutoScaling Group. These Instances need to access objects in an S3 bucket. Which of the following is the ideal approach to ensure this access is set in place?
+  * Ensure that the AutoScaling Group attaches an IAM Role attached to the underlying EC2 Instances. 
+#### You are an architect for a company that is going to be hosting an application in AWS. They want to load balance the traffic based on which route the user chooses. The 2 possible routes for the application are /customers and /orders. Which of the following would you include in the design?
+  * Application Load Balancer instead of Classic load Balancer
+#### Your company is planning on hosting an application that will be based on Docker containers. They need to setup an orchestration service that would automatically scale based on the load. As much as possible, the company does not want the burden of managing the underlying infrastructure. Which of the following can assist in this scenario?
+  * AWS ECS with service autoscaling
+    * Your ECS can optionally be configured to use Service Auto Scaling to adjust its desired count up or down in response to CloudWatch alarms. Service AutoScaling leverages the Application Auto Scaling service to provide this functionality. 
+#### Your team is developing Lambda functions. These functions would need to interact with databases belonging to different environments. Which of the following is the ideal approach to ensuring that the Lambda function are designed in the right way to interact with Databases in multiple environments?
+  * Make use of environment variables to store the database connecting strings. 
+    * Environment variables for Lambda functions enables you to dynamically pass settings to your function code and libraries, without making changes to your code. 
+#### A company is planning to store sensitive documents in an S3 bucket. They want to ensure that documents are encrypted at rest. They want to ensure that they managee the underlying keys which are used for encryption. Which of the following can be used for this purpose. 
+  * Use S3 server-side encryption with Customer keys
+  * Use S3 client-side encryption
+    * Client-side encryption is the act of encrypting data before sending it to Amazon S3. To enable client side encryption, use an AWS KMS-managed customer master key and use a client-side master key.
+#### A company has a requirement to monitor API activity for audit purposes for their AWS account. This audit would be conducted in the future as well and should be applicable to all regions. How would you design your solution to meet the present and future needs?
+  * Ensure one Cloudtrial log is enabled for all regions. 
+#### A Company is currently hosting an application which connects to a MySQL AWS RDS Instance. Off late there have been many performance issues being encountered. After careful analysis, it has been determined that the issue is occuring as a result of similar queries being fired against the database. Which of the following can be added to the architecture to alleviate the performance issue?
+  * Use the ElastiCache Service
+#### A company has a set of EC2 instances hosting a custom based application which is listening on port 3308. All of a sudden there seem to be a barrage of requests comming in from a source IP address of 52.0.9.10. Which of the following can be used to stop requests from entering the VPC from this IP address.
+  * Network ACL's
+    * NACL is a n optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. You might set up NACL with rules similar to your security group in order to add an additional layer of security.
+    * Security group is not suitable option because it can only allow, but not deny traffic.
+    * VPC flow logs is not suitable option because it is used for monitoring your network traffic into the VPC.
+    * AWS CloudTrail is not suitable option because it is used for API Monitoring
