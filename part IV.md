@@ -167,3 +167,8 @@
 #### You currently have an architecture which consists of a set of Web servers in the public subnet. And database servers in the private subnet along with a NAT Instance. The NAT instance is now becoming a bottleneck and you are looking to replace it with a NAT gateway. Which of the following would ensure a high availibility setup for the NAT device?
   * Deploy the NAT gateway in 2 availability zones
     * Because if you have resources in multiple AZ and they share one NAT gateway, in the event that the NAT gateway's availability zone is down, resources in the other availability zones lose internet access. 
+#### Your company is planning on setting up an application with the following architecture; a. a set of EC2 instances hosting a web application. b. the application will sit behind an ELB. c. The users will access the application from the internet via the ELB. d. The application will connect to a backend database server. d. A NAT Gateway is also implemented. Which of the following is the right architecture for the network, keeping high availability in mind?
+  * 2 public subnets for the Elastic Load Balancer, 2 private subnets for the Web server EC2 Instances, 2 private subnet for database layer. 
+    * You need to have public subnets for the ELB to ensure that traffic can flow via the Internet
+    * The Web server can be in the private subnet since the communication between the instances and the ELB happens via the private IP
+    * The database servers should be in the private subnet since it doesnot need to communicate with the Internet
