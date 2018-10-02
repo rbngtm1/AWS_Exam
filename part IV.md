@@ -142,3 +142,28 @@
       * Use Server-side Encryption with Customer-Provided Keys (SSE-C) - You manage the encryption keys and Amazon S3 manages the encryption, as it writes to disks, and decryption, when you access your objects. 
 #### Your company has a series of web sites hosted in AWS. They need to ensure that users from the Europe region are directed to the website www.demo.com for regulatory purpose. Which of the following can help in this regard?
   * Using the Route 53 service
+    * Geoloaction routing lets you choose the resources that serve your traffic based on the geographical loaction of your users, meaning the location that DNS queries originate from. for eg, you might want all queries from Europe to be routed to an ELB in another region.
+#### A company is planning to host an active-active site. One site will be located in AWS and the other one on their On-premise data center. They need to ensure that traffic is distributed accordingly between both the sites. Which of the following routing policy would you use for this purpose?
+  * Weighted Routing
+    * Weighted Routing lets you associate multiple resources with a single domain name (example.com) or subdomain name (something.example.com) and choose how much traffic is routed to each resources. This can be useful for variety of purpose, including load balancing and testing new versions of software. 
+#### A company needs to access a service provided by a consultant company. The service from the consultant company and the application of the primary company exist in AWS VPC. The VPC's are located in different region. How can you accomplish this connectivity ensuring that traffic does not pass via the Internet? 
+  * Create a VPC peering between the VPC's in the primary company and consultant company's account
+  * Create a AWS Direct Connect in the primary company's account. Create a private Virtual Interface to the VPC in the consultant company's account
+    * A VPC Peering connection is a networking connection between two VPCs that enables you to route traffic between them privately.
+    * Direct connect makes it easy to establish a dedicated network connection from your premise to AWS
+ #### An application needs to setup on AWS. It consists of several components. Two primary components are required to run for 3 hours everyday. The other components are required everyday for more than 6-8 hours. Which of the following would you use to ensure COSTS are minimized for the underlying EC2 Instances?
+   * On-demand instances for the primary components and for the remaining components, reserved instance.
+     * reserved instances provide you with a significant discount compared to on-demand instance pricing. 
+ #### You have currently contacted an AWS partner to carry out an audit for your AWS account. You need to ensure that the partner can carry out an audit on your resources. Which one of the following steps would you ideally carry out?
+   * Create a cross account IAM Role
+     * Cross-account IAM roles allow customers to securely grant access to AWS resources in their account to a third party, like an APN Partner, while retaining the ability to control and audit who is accessing their AWS accont. 
+#### Your company is planning on setting up an application that will consist of a presentation layer and a datastore in DynamoDB. The data in DynamoDB will only used frequently within the week in which the data is inserted. After a week, the data would tend to become stale. But the stale data would need to be available on durable storage for future analysis on historical data. Which of the following would be ideal implementation steps for this sort of architecture?
+  * Setup DynamoDB tables on a weekly basis. Ensure the most recent week table has a higher throughput setup
+  * Use the AWS Data Pipeline service to transfer the older data to Amazon S3. 
+    * Data pipeline is a web service that you can use to automate the movement and transformation of data. 
+#### A company is going to setup an application that will be based on Docker based containers. The containers will be setup in the ECS. You need to also setup load balancing for the underlying services which are based on dynamic port values. Which of the following would be the ideal service to use for this purpose?
+  * Application load balancer
+    * Application load balancer offer several features that make them attractive for use with Amazon ECS service.
+#### You currently have an architecture which consists of a set of Web servers in the public subnet. And database servers in the private subnet along with a NAT Instance. The NAT instance is now becoming a bottleneck and you are looking to replace it with a NAT gateway. Which of the following would ensure a high availibility setup for the NAT device?
+  * Deploy the NAT gateway in 2 availability zones
+    * Because if you have resources in multiple AZ and they share one NAT gateway, in the event that the NAT gateway's availability zone is down, resources in the other availability zones lose internet access. 
