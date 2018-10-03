@@ -20,3 +20,9 @@
     * Check that there are no other route table entries that route all or part of the internet traffic to another device instead of the NAT gateway.
   * Ensure that your security group rules for your private instances allow outbound internet traffic
     * The NAT gateway itself allows all outbound traffic and traffic received in response to an outbound request ( it is therefore stateful)
+#### Your organization is planning to develop a web application containing a Web Server and an RDS Instance. This application will be accessed from internet. Your organization asked you to architect the solution on AWS. Your existing AWS environment already has a VPC with private subnet and public subnet which has a route to internet through Internet Gateway. What would be the best and cost effective solution you would provide?
+  * Web server EC2 in public Subnet with Elastic IP, RDS instance in private subnet.
+#### You are building a fleet of EC2 linux instances in your AWS environment for managing scheduled heavy work loads and write the data into AWS Redshift. Developers and Administrators in your organization need to login to these EC2 machines to develop, fix, deploy and manage the work loads only within your organization network. What would be secure and cost-effective architecture you would provide?
+  * AWS VPN connection from your organization to AWS VPC, a bastion host in VPN enabled subnet with secure SSH key to login, EC2 instances in private subnet with secure SSH keys to login, Redshift in private subnet. (because instances should be accessed from organization network)
+#### You have a bastion host EC2 instance on AWS VPC public subnet. You would want to SSH to EC2 instance. What would be the secure and minimal configuration you need inorder for SSH request to work?
+  * Allow port 22 and SSH protocol on Security Group Inbound, Network ACL Inbound, Network ACL inbound for your IP address
