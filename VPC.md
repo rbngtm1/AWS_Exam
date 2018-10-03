@@ -1,0 +1,1 @@
+#### You are working as an architect in your organization. You have peered VPC A as requester and VPC B as accepter and both VPCs can communicate with each other. Now you want resources in both your VPCs to reach out 
