@@ -13,3 +13,10 @@
   * VPC endpoint contains a policy, currently restricted to certain S3 buckets and does not contain new S3 bucket.
   * AWS IAM role/user does not have access to new S3 bucket. 
     * VPC endpoint has a policy which by default allows all actions on all S3 buckets. We can restrict access to certain S3 buckets and certain actions on this policy. In such cases, for accessing any new buckets or for any new instances, VPC endpoint policy needs to be modified accordingly.
+#### If instances in private subnet cannot access internet
+  * Check that you've configured your route tables correctly. 
+    * The NAT gateway must be in public subnet with a route table that routes internet traffic to an internet gateway.
+    * Your instances must be in a private subnet with a route table that routes internet traffic to the NAT gateway.
+    * Check that there are no other route table entries that route all or part of the internet traffic to another device instead of the NAT gateway.
+  * Ensure that your security group rules for your private instances allow outbound internet traffic
+    * The NAT gateway itself allows all outbound traffic and traffic received in response to an outbound request ( it is therefore stateful)
