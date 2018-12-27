@@ -20,4 +20,27 @@
   * Periodically check the log files for errors in Cloudwatch or CloudTrial and send out notification through SNS.
   * Scheduled job to generate AWS resource usage reports based on certain tags.
   * A website with highly scalable backend layer which will persist data into RDS or DynamoDB.
-#### 
+#### AWSLambdaKinesisExecutionRole 
+  * Grants permission for Amazon Kinesis Data Streams actions, and CloudWatch Logs actions. If you are writting a Lambda function to process Kinesis stream events you can attach this permission policy. 
+  eg: 
+                  {
+                   "Version": "2012-10-17"
+                      "Statement": [
+                           {
+                              "Effect": "Allow",
+                              "Action": [
+                                   "kinesis:DescribeStream",
+                                   "kinesis:GetRecords",
+                                   "kinesis:GetShardIterator",
+                                   "kinesis:ListStreams",
+                                   "logs:CreateLogGroup",
+                                   "logs:CreateLogStream",
+                                   "logs:PutLogEvents"
+                              ],
+                              "Resource":"*"
+                            }
+                          ]
+                    }
+  
+          
+                
