@@ -17,4 +17,7 @@
 #### Supported language
   * Node.js, Java, Go, C#, and Python
 #### Ephemeral disk capacity("/tmp" space) is 512 MB. Potential use case of Lambda is:
-  * Download S3 bucket objects of size varying between 500 MB - 2GB to a Lambda Ephemeral disk or temp location, read and analyze them for key words and add the key words to the metadata of file object for search purposes.
+  * Periodically check the log files for errors in Cloudwatch or CloudTrial and send out notification through SNS.
+  * Scheduled job to generate AWS resource usage reports based on certain tags.
+  * A website with highly scalable backend layer which will persist data into RDS or DynamoDB.
+#### 
