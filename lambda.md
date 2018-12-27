@@ -22,7 +22,7 @@
   * A website with highly scalable backend layer which will persist data into RDS or DynamoDB.
 #### AWSLambdaKinesisExecutionRole 
   * Grants permission for Amazon Kinesis Data Streams actions, and CloudWatch Logs actions. If you are writting a Lambda function to process Kinesis stream events you can attach this permission policy. 
-     eg: 
+     ex: 
      *             {
                    "Version": "2012-10-17"
                       "Statement": [
@@ -42,5 +42,5 @@
                           ]
                     }
   
-          
+#### Note: Lambda execution role policy does not have access to create CloudWatch logs.        
                 
