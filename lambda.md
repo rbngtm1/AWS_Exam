@@ -42,5 +42,8 @@
                           ]
                     }
   
-#### Note: Lambda execution role policy does not have access to create CloudWatch logs.        
+#### Note: Lambda execution role policy does not have access to create CloudWatch logs.       
+#### When configuring AWS SQS as event source for AWS Lambda function, what is the maximum batch size supported by AWS SQS for ReceiveMessage call?
+  * 10
+
                 
