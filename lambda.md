@@ -71,3 +71,22 @@
 #### Storing Sensitive Information
   * The lambda console provides encryption helpers that leverage AWS KMS to store sensitive information as Ciphertext.
   * The lambda console also provides decryption helper code to decrypt that information for use in your in Lambda function code. 
+#### Which of the following actions are required by Lambda execution role in order to write the logs into AWS CloudWatch?
+  * logs:CreateLogGroup
+  * logs:CreateLogStream
+  * logs:PutLogEvents
+#### AWS/Lambda namespaces includes:
+  * Invocations
+  * Errors
+  * Dead Letter Errors
+  * Duration
+  * Throttles
+  * IteratorAge
+  * ConcurrentExecutions
+  * UnreservedConcurrentExecutions
+#### If you are specified criteria like the code should not run if the version is $LATEST
+  * getFunctionVersion from context object
+    * If an alias is used to invoke the function, then getFunctionVersion will be the version the alias points to.
+  * Use AWS_LAMBDA_FUNCTION_VERSION environment variable
+#### Lambda invocation
+![lambda_invocation](https://github.com/rbngtm1/solution_architect_associate/blob/master/lambdainvocation.JPG)
