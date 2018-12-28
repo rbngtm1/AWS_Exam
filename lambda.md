@@ -54,3 +54,4 @@
   * If you use Event (asynchronous) invocation option, the function will be invoked at least once in response to an event and the function will be invoked at least once in response to the event and the fuction must be idempotent to handle this.
   * Lambda Invoke API is useful scenario if you are trying to migrate from on-premise to AWS while running processes based on triggers from other application. 
 #### Amazon CloudFront events can be used to trigger function (AWS Lambda@edge)
+![lambda@edge](https://github.com/rbngtm1/solution_architect_associate/blob/master/awslambda%40edge.JPG)
