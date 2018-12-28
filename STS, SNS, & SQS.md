@@ -6,3 +6,7 @@
 #### AWS SQS Long Polling
   * long polling helps reduce the cost of SQS by eliminating the number of empty responses (when there are no message available for a ReceiveMessage request) and false empty responses (when messages are available but aren't included in a response). 
   * You can enable long polling for a new or existing queue using the AWS Management Console or AWS SDK for Java
+```console
+Benefits of Long Polling
+    - Eliminate empty responses by allowing Amazon SQS to wait until a message is available in a queue 
+```
