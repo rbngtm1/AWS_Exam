@@ -63,3 +63,6 @@
   * Amazon SQS
   
 ![lambdalimit](https://github.com/rbngtm1/solution_architect_associate/blob/master/lambdalimit.JPG)
+#### If you have two account, add permission on the account which would trigger Lambda on another account through AWS CLI
+  * You can also grant cross-account permissions using the function policy. For example, if a user-defined application and the Lambda function it invokes belong to the same AWS account, you don't need to grant explicit permissions. 
+#### 
