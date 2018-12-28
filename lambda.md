@@ -46,3 +46,4 @@
 #### When configuring AWS SQS as event source for AWS Lambda function, what is the maximum batch size supported by AWS SQS for ReceiveMessage call?
   * 10
 #### Use constant values in Cloudwatch event triggered Lambda functions
+https://github.com/rbngtm1/solution_architect_associate/blob/master/lambdaimage.JPG
