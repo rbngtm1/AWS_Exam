@@ -55,3 +55,10 @@
   * Lambda Invoke API is useful scenario if you are trying to migrate from on-premise to AWS while running processes based on triggers from other application. 
 #### Amazon CloudFront events can be used to trigger function (AWS Lambda@edge)
 ![lambda@edge](https://github.com/rbngtm1/solution_architect_associate/blob/master/awslambda%40edge.JPG)
+#### Do AWS lambda function remain available when I change my code or its configuration?
+  * Yes. When you update a Lambda function, there will be a brief window of time, typically less than a minute, when requests could be served by either the old or new version of your function. 
+#### Pull based services supported by Lambda
+  * AWS Kinesis
+  * Amazon DynamoDB
+  * Amazon SQS
+#### 
