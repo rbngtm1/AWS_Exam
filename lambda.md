@@ -47,3 +47,10 @@
   * 10
 #### Use constant values in Cloudwatch event triggered Lambda functions
 ![lambdatrigger](https://github.com/rbngtm1/solution_architect_associate/blob/master/lambdaimage.JPG)
+#### Lambda Invoke API
+  * You can invoke a Lambda function using a custom event through AWS Lambda's invoke API. Only the function's owner or another AWS account that the owner has granted permission can invoke the function. 
+  * If you are using the versioning feature, you can invoke the specific function version by providing function version or alias name that is pointing to the function version using the Qualifier parameter in the request. If you don't provide the Qualifier parameter, the $Latest version of Lambda is invoked. 
+  * If you use RequestResponse (synchronous) invocation option, the function will be invoked only once. 
+  * If you use Event (asynchronous) invocation option, the function will be invoked at least once in response to an event and the function will be invoked at least once in response to the event and the fuction must be idempotent to handle this.
+  * Lambda Invoke API is useful scenario if you are trying to migrate from on-premise to AWS while running processes based on triggers from other application. 
+#### Amazon CloudFront events can be used to trigger function (AWS Lambda@edge)
