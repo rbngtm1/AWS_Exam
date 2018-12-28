@@ -65,4 +65,9 @@
 ![lambdalimit](https://github.com/rbngtm1/solution_architect_associate/blob/master/lambdalimit.JPG)
 #### If you have two account, add permission on the account which would trigger Lambda on another account through AWS CLI
   * You can also grant cross-account permissions using the function policy. For example, if a user-defined application and the Lambda function it invokes belong to the same AWS account, you don't need to grant explicit permissions. 
-#### 
+#### Lambda dead-letter queue pushes unprocessed events to:
+  * AWS SQS
+  * AWS SNS
+#### Storing Sensitive Information
+  * The lambda console provides encryption helpers that leverage AWS KMS to store sensitive information as Ciphertext.
+  * The lambda console also provides decryption helper code to decrypt that information for use in your in Lambda function code. 
