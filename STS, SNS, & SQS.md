@@ -1,9 +1,41 @@
+#### About SQS
+  * Fully-managed queuing service
+  * Loose coupling - high availability, scalibility and reliability
+  * Uses multiple redundant AZs within a region
+  * Integrated with IAM
+  * PCI DSS compliant (can transmit merchant/ card data)
+  * Multiple producers and consumers can interact with SQS at the same time
+  * 1 million requests/mont is free
+  * Message size = 256 KB
+  * supports JSON, XML, unformatted text
+  * at-least-once delivery = more than one copy can be delivered.
+#### Types(SQS)
+  * Standard(default)
+  * FIFO 
+    * Exactly once processing
+    * Limited to 300 TPS(transactions per sec)
+#### Visiblity Timeout
+  * Default is 30 sec
+  * max is 12 hrs
 #### SQS guide
   * When a customer receives and processes a message from a queue, the message remains in the queue. AWS SQS doesn't automatically delete the message.
   * SQS is a distributed system, there's no gurantee that the customer actually receives the message( for ex, due to connectivity issue, or due to an issue in the consumer application). Thus, the customer must delete the message from the queue after receiving and processing it. 
   * Immediately after a message is received, it remains in the queue. To prevent other consumers from processing the message again, AWS SQS sets a visibility timeout, a period of time during which AWS SQS prevents other consumers from receiving and processing the message. 
   * The default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours.
+  * Can be used with autoscaling groups
+  * You can create a priority queue (process differently for premium and standard members)
+  * Producer =>SNS Topic =>Order Queue/Audit Queue
+  * can send/receive/delete max 10 message in a request (batch versus single)
+  * Message retention period ( 1 minute to 14 days), default is 4 days
+  * Delay queues let you postpone the delivery of new message in a queue for the specific number of seconds
+  * A dead letter queue is queue that source queues can target for messages that can't be processed (consumed) successfully.
+
 #### AWS SQS Long Polling
+  * Short polling(default) returns immediately even if there are no message in the queue.
+  * Long polling eliminates false empty responses by quering all (rather than a limited number) of the servers.
+  * Long polling returns message as soon as any message becomes available.
+  * Change ReceiveMessageWaittimeSeconds(0-20 seconds max)
+  * can help avoid buring of CPU cycles (forex: when using EC2 to process your message)
   * long polling helps reduce the cost of SQS by eliminating the number of empty responses (when there are no message available for a ReceiveMessage request) and false empty responses (when messages are available but aren't included in a response). 
   * You can enable long polling for a new or existing queue using the AWS Management Console or AWS SDK for Java
 ```console
