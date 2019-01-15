@@ -93,6 +93,22 @@ Benefits of Long Polling
   * The temporary security credentials returned by this operation consist of an access key ID, a secret access key, and a security token.
   * By default, the temporary security credentials created by AssumeRoleWithSAML last for one hour. However, you can use the optional DurationSeconds parameter to specify the duration of your session.
 # SNS
+ * The various SNS endpoints for northern virginia:
+    * US-East-1 (Virginia): http://sns.us-east-1.amazonaws.com 
+#### What are appropriate ways for you to provide timely, device-specific instructions to end users when annoncing this downtime?
+  * Send a single message, but customize the text in the SNS message field so that each device gets only the information that is appropriate for them.
+#### What is the format of an Amazon SNS topic?
+  * Topic names are limited to 256 characters. Alphanumeric characters plus hyphens (-) and underscores (_) are allowed. Topic names must be unique within an AWS account. After you delete a topic, you can reuse the topic name.
+  * When a topic is created, Amazon SNS will assign a unique ARN (Amazon Resource Name) to the topic
+  * The following is the ARN for a topic named “mytopic” created by a user with the AWS account ID “123456789012” and hosted in the US East region:
+
+arn:aws:sns:us-east-1:1234567890123456:mytopic 
+#### How long will subscription requests remain pending, while waiting to be confirmed?
+  * Token included in the confirmation message sent to end-points on a subscription request are valid for 3 days.
+#### Can a message be deleted after being published?
+  * No, once a message has been successfully published to a topic, it cannot be recalled.
+#### Does Amazon SNS provide at-least-once message delivery to Amazon SQS queue?
+  * Yes, Amazon SNS gurantees that each message is delivered to Amazon SQS at least once. 
 #### Protocols for AWS SNS
   * HTTP
   * HTTPS
