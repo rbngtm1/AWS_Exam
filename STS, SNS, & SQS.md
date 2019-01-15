@@ -55,6 +55,31 @@ Benefits of Long Polling
   * To select the message to delete, use the ReceiptHandle of the message (not the MessageID which you receive when you send the message)
   * You can use dead letter queues to isolate messages that can't be processed for later analysis.
   * SQS doesn't encrypt messages by default.
+# SWF
+#### Programming language SDK's available for SWF
+  * Java, Ruby, .NET and PHP
+####  Can I use AWS Identity and Access Management (IAM) to manage access to Amazon SWF? 
+  * Yes. You can grant IAM users permission to access Amazon SWF. IAM users can only access the SWF domains and APIs that you specify.
+#### Maximum number of SWF domains allowed in an AWS account is 100
+  * You can have a maximum of 10,000 workflow and activity types (in total) that are either registered or depreciated in each domain. 
+  * You can have a maximum of 100 Amazon SWF domains(including registered and depreciated domains) in your AWS account. 
+  * gurantees delivery order of message/tasks.
+#### How long can workflow executions run
+  * Each workflow execution can run for a maximum of 1 year. Each workflow execution history can grow up to 25,000 events.
+#### In SWF what are the containers called for segregating application resources.
+  * Domains
+    * In SWF, you define logical containers called domains for your application resources. Domains can only be created at the level of your AWS account and may not be nested
+#### Developing Deciders in Amazon SWF
+  * A decider is an implementation of the **coordination logic** of your workflow type that runs during the execution of your workflow. You can run multiple deciders for a single workflow type.
+#### True about SWF
+  * Human can perform an activity task, but not decision task. 
+#### Some core benefits of SWF
+  * One of the major use case of SWF is video encoding
+  * Centralize the coordination of steps in the application
+  * Automate the workflow that include human tasks
+  * Manage the flow of work between application components
+  * Integrate a range of programs and components 
+  * help developers use asynchronous programming in the development of their applications
 #### STS facts
   * STS enables you to request temporary, limited-privilege credentials.
   * STS enables users to assume role
