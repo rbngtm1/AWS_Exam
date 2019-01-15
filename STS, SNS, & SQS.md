@@ -1,3 +1,4 @@
+# SQS
 #### About SQS
   * Fully-managed queuing service
   * Loose coupling - high availability, scalibility and reliability
@@ -80,6 +81,7 @@ Benefits of Long Polling
   * Manage the flow of work between application components
   * Integrate a range of programs and components 
   * help developers use asynchronous programming in the development of their applications
+# STS
 #### STS facts
   * STS enables you to request temporary, limited-privilege credentials.
   * STS enables users to assume role
@@ -90,6 +92,7 @@ Benefits of Long Polling
   * Returns a set of temporary security credentials for users who have been authenticated via a SAML authentication response. 
   * The temporary security credentials returned by this operation consist of an access key ID, a secret access key, and a security token.
   * By default, the temporary security credentials created by AssumeRoleWithSAML last for one hour. However, you can use the optional DurationSeconds parameter to specify the duration of your session.
+# SNS
 #### Protocols for AWS SNS
   * HTTP
   * HTTPS
