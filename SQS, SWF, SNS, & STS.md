@@ -4,7 +4,7 @@
   * Loose coupling - high availability, scalibility and reliability
   * Uses multiple redundant AZs within a region
   * Integrated with IAM
-  * PCI DSS compliant (can transmit merchant/ card data)
+  * PCI DSS compliant (can transmit merchant/ card data): payment card industry data security standard
   * Multiple producers and consumers can interact with SQS at the same time
   * 1 million requests/mont is free
   * Message size = 256 KB
