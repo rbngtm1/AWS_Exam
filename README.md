@@ -68,7 +68,7 @@
   * Write a cronjob that uses the AWS CLI to take a snapshot of production EBS volumes 
   * You cacn create a snapshot vial CLI command -create-snapshot
   * Even though snapshot are saved incrementally, the snapshot deletion process is designed so that you only need to retain most recent snapshot in order to restore the entire volume. 
-#### Planning to host static website on EC3 for highly available environment. (Use below aspects)
+#### Planning to host static website on EC2 for highly available environment. (Use below aspects)
   * An autoscaling group to recover from EC2 instance failure
   * Elastic Load Balancer
   * Multiple Availability Zone
