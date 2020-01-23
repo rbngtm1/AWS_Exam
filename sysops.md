@@ -9,4 +9,6 @@
   
 #### To secure deletion of s3 bucket
   * In bucket policy, use condition key "aws:MultiFactorAuthPresent" to allow user to delete objects in S3 bucket post MFA authentication.
-  
+
+#### Deny access to any AWS Resources for root users
+  * use SCP (service control policy) All SCP are applied from the master account which is account used to create AWS organization
