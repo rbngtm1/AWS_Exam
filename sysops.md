@@ -7,3 +7,6 @@
 #### To ensure backups for available table in  DynamoDB
   * enable creation of on-demand backups for the tables.
   
+#### To secure deletion of s3 bucket
+  * In bucket policy, use condition key "aws:MultiFactorAuthPresent" to allow user to delete objects in S3 bucket post MFA authentication.
+  
