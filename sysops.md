@@ -22,3 +22,10 @@
 #### Basic: data is available automatically in 5-minute periods at no charge. This includes data for the root device volumes for EBS-backed instances.
 
 #### Detailed: Provisioned IOPS SSD (io1) volumes automatically sends one-minute metrics in CloudWatch.
+
+
+## load Balancing
+
+#### Session cookie: aws elb create-lb-cookie-stickiness-policy. 
+
+#### Application Session cookie: aws elb create-app-cookie-stickiness-policy
