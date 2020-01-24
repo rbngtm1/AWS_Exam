@@ -12,3 +12,6 @@
 
 #### Deny access to any AWS Resources for root users
   * use SCP (service control policy) All SCP are applied from the master account which is account used to create AWS organization
+  
+#### To get list of the client's IP address for ec2 instances placed behind classic load balancer
+  * Enable access logs for the ELB. ELB provides access logs that capture detailed information about requests sent to your load balancer.
