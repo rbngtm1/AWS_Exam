@@ -15,3 +15,10 @@
   
 #### To get list of the client's IP address for ec2 instances placed behind classic load balancer
   * Enable access logs for the ELB. ELB provides access logs that capture detailed information about requests sent to your load balancer.
+  
+  
+## Monitoring
+
+#### Basic: data is available automatically in 5-minute periods at no charge. This includes data for the root device volumes for EBS-backed instances.
+
+#### Detailed: Provisioned IOPS SSD (io1) volumes automatically sends one-minute metrics in CloudWatch.
