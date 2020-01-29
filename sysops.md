@@ -35,3 +35,7 @@
 
 #### Sticky Sesson in CLB
   * By default, a Classic Load Balancer routes each request independently to the registered instance with the smallest load. However, you can use the sticky session feature (also known as session affinity), which enables the load balancer to bind a user's session to a specific instance. This ensures that all requests from the user during the session are sent to the same instances.
+  
+#### Permission required to ensure that ec2 instance will host an application that would access Dynamo DB table
+  * A trust policy that allows the EC2 instance to assume a role
+  * An IAM permission policy that allows the user to pass a role
