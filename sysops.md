@@ -31,3 +31,7 @@
 #### Application Session cookie: aws elb create-app-cookie-stickiness-policy
 
 #### In classic load balancer, configure connection draining to ensure that a classic load balancer stops sending requests to instances that are deregistered or unhealthy.
+  * In CLB, the proxy protocol header helps you identify the IP address of a client when you have a load balancer that uses TCP for  back-end connections.
+
+#### Sticky Sesson in CLB
+  * By default, a Classic Load Balancer routes each request independently to the registered instance with the smallest load. However, you can use the sticky session feature (also known as session affinity), which enables the load balancer to bind a user's session to a specific instance. This ensures that all requests from the user during the session are sent to the same instances.
