@@ -29,3 +29,5 @@
 #### Session cookie: aws elb create-lb-cookie-stickiness-policy. 
 
 #### Application Session cookie: aws elb create-app-cookie-stickiness-policy
+
+#### In classic load balancer, configure connection draining to ensure that a classic load balancer stops sending requests to instances that are deregistered or unhealthy.
