@@ -51,3 +51,6 @@
     
 ## Instance type
 #### You may modify some attribute such as instance size for standard reserve instance, but if you are looking for probablity of having modifying instance type, switch to convertible reserve instance.
+
+#### AWS Performance Insights
+  * Performance Insights is on by default in the console for Aurora MySQL, Aurora PostgreSQL, and RDS PostgreSQL db engine, to help to monitor by vizualization of data load and analyze any issues that affect it.
