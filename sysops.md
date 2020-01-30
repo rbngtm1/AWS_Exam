@@ -39,3 +39,12 @@
 #### Permission required to ensure that ec2 instance will host an application that would access Dynamo DB table
   * A trust policy that allows the EC2 instance to assume a role
   * An IAM permission policy that allows the user to pass a role
+  
+  
+#### Support plans
+  * business and enterprise support plan facilitates:
+    * Production system impared: < 4 hours
+    * production system down: < 1 hour
+  * enterprice additional support includes:
+    * Business-critical system down: < 15 mins
+    * Operational Support (Operation reviews, recommendation and reporting)
