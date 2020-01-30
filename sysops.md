@@ -48,3 +48,6 @@
   * enterprice additional support includes:
     * Business-critical system down: < 15 mins
     * Operational Support (Operation reviews, recommendation and reporting)
+    
+## Instance type
+#### You may modify some attribute such as instance size for standard reserve instance, but if you are looking for probablity of having modifying instance type, switch to convertible reserve instance.
