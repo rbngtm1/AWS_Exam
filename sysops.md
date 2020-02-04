@@ -54,3 +54,6 @@
 
 #### AWS Performance Insights
   * Performance Insights is on by default in the console for Aurora MySQL, Aurora PostgreSQL, and RDS PostgreSQL db engine, to help to monitor by vizualization of data load and analyze any issues that affect it.
+
+#### AWS Organization
+  * https://aws.amazon.com/organizations/faqs/
