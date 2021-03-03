@@ -63,20 +63,20 @@
 
 ```
 AWS Organization helps to:
-	a.	Centrally Manage policies across multiple AWS Accounts
-   	i.	AWS Organizations allows you to manage multiple AWS accounts at once. You can create groups of accounts, and then attach policies to a group to ensure the correct policies are applied across the accounts. Organizations enables you to centrally manage policies across multiple accounts, without requiring custom scripts and manual processes.
-	b.	Control Access To AWS Services
-  	i.	With AWS Organizations, you can create Service Control Policies (SCPs) that centrally control AWS service use across multiple AWS accounts. You can specifically Allow or Deny individual AWS Services. For example you could deny the use of Kinesis or DynamoDB to your HR group within your AWS Organization. Even if IAM in that account allows it, SCP will overwrite it.
-  	ii.	Essentially you attach a policy to an organizational unit and every AWS accounts under that organizational unit will inherit that policy.
-  c.	Automate AWS Account Creation And Management
-    i.	You can use the AWS Organizations APIs to automate the creation and management of new AWS accounts. The Organizations APIs enable you to create new accounts programmatically, and to add the new accounts to a group. The policies attached to the group are automatically applied to the new account.
-  d.	Consolidate Billing Across Multiple AWS Accounts
-    i.	AWS Organizations enables you to set up a single payment method for all the AWS accounts in your organization through consolidated billing. With consolidated billing, you can see a combined view of charges incurred by all your accounts, as well as take advantage of pricing benefits from aggregated usage, such as volume discounts for Amazon EC2 and Amazon S3.
+a.	Centrally Manage policies across multiple AWS Accounts
+  i.	AWS Organizations allows you to manage multiple AWS accounts at once. You can create groups of accounts, and then attach policies to a group to ensure the correct policies are applied across the accounts. Organizations enables you to centrally manage policies across multiple accounts, without requiring custom scripts and manual processes.
+b.	Control Access To AWS Services
+  i.	With AWS Organizations, you can create Service Control Policies (SCPs) that centrally control AWS service use across multiple AWS accounts. You can specifically Allow or Deny individual AWS Services. For example you could deny the use of Kinesis or DynamoDB to your HR group within your AWS Organization. Even if IAM in that account allows it, SCP will overwrite it.
+  ii.	Essentially you attach a policy to an organizational unit and every AWS accounts under that organizational unit will inherit that policy.
+c.	Automate AWS Account Creation And Management
+  i.	You can use the AWS Organizations APIs to automate the creation and management of new AWS accounts. The Organizations APIs enable you to create new accounts programmatically, and to add the new accounts to a group. The policies attached to the group are automatically applied to the new account.
+d.	Consolidate Billing Across Multiple AWS Accounts
+  i.	AWS Organizations enables you to set up a single payment method for all the AWS accounts in your organization through consolidated billing. With consolidated billing, you can see a combined view of charges incurred by all your accounts, as well as take advantage of pricing benefits from aggregated usage, such as volume discounts for Amazon EC2 and Amazon S3.
 
 If organization has setup multiple IAM users and the organization wants that each IAM user accesses the IAM console only within the organization and not from outside.
 Create an IAM policy with a condition which denies access when the IP address range is not from the organization.
 
-Q> What are Resource Groups?
+What are Resource Groups?
 Resource groups make it easy to group your resources using the tags that are assigned to them. You can group resources that share one or more tags.
 Resource groups contain information such as;
 a.	Region
@@ -225,12 +225,12 @@ Storage Gateway consists of an on-premise software appliance which connects with
 Types of Storage Gateway
 1	File Gateway- uses NFS/SMB
   i.	Files stored as objects in your S3 buckets
-	ii.	Accessed using NFS or SMB mount point
+  ii.	Accessed using NFS or SMB mount point
 
 2.	Volume Gateway – uses (iSCSI)
   a.	Stored Volumes
-     i.	Store your all data locally and only backup to AWS
- 	  ii.	Entire dataset stored on-site, backed-up to S3 as EBS Snapshots
+    i.	Store your all data locally and only backup to AWS
+    ii.	Entire dataset stored on-site, backed-up to S3 as EBS Snapshots
   b.	Cached Volumes
     i. Use S3 as your primary storage and cache frequently accessed data in your Storage Gateway.
     ii. Entire dataset stored in S3, only frequently accessed data cached on-site.
