@@ -412,9 +412,9 @@ ElastiCache Redis (cluster mode disabled) cluster is under a heavy read load and
 
 RDS
 If you are using mysql RDS engine. Periodically, RDS performs below tasks in maintenance window:
-1.	1.	Update to the underlying Operating System
-2.	2.	Changes to the underlying DB version
-3.	3.	Patches applied to the server
+1.	Update to the underlying Operating System
+2.	Changes to the underlying DB version
+3.	Patches applied to the server
 # There is 35 days maximum retention period for automated backup. To have backup forever, consider using manual snapshot. Note that: if the you delete the DB instance, the automated backup can’t be recovered but if you take manual snapshot and delete the DB instance, it can be recovered.
 
 Alias:
