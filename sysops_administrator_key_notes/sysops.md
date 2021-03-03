@@ -63,72 +63,74 @@
 
 ```
 AWS Organization helps to:
-a.	a.	Centrally Manage policies across multiple AWS Accounts
-i.	i.	AWS Organizations allows you to manage multiple AWS accounts at once. You can create groups of accounts, and then attach policies to a group to ensure the correct policies are applied across the accounts. Organizations enables you to centrally manage policies across multiple accounts, without requiring custom scripts and manual processes.
-a.	b.	Control Access To AWS Services
-i.	i.	With AWS Organizations, you can create Service Control Policies (SCPs) that centrally control AWS service use across multiple AWS accounts. You can specifically Allow or Deny individual AWS Services. For example you could deny the use of Kinesis or DynamoDB to your HR group within your AWS Organization. Even if IAM in that account allows it, SCP will overwrite it.
-ii.	ii.	Essentially you attach a policy to an organizational unit and every AWS accounts under that organizational unit will inherit that policy.
-a.	c.	Automate AWS Account Creation And Management
-i.	i.	You can use the AWS Organizations APIs to automate the creation and management of new AWS accounts. The Organizations APIs enable you to create new accounts programmatically, and to add the new accounts to a group. The policies attached to the group are automatically applied to the new account.
-a.	d.	Consolidate Billing Across Multiple AWS Accounts
-i.	i.	AWS Organizations enables you to set up a single payment method for all the AWS accounts in your organization through consolidated billing. With consolidated billing, you can see a combined view of charges incurred by all your accounts, as well as take advantage of pricing benefits from aggregated usage, such as volume discounts for Amazon EC2 and Amazon S3.
+	a.	Centrally Manage policies across multiple AWS Accounts
+   	i.	AWS Organizations allows you to manage multiple AWS accounts at once. You can create groups of accounts, and then attach policies to a group to ensure the correct policies are applied across the accounts. Organizations enables you to centrally manage policies across multiple accounts, without requiring custom scripts and manual processes.
+	b.	Control Access To AWS Services
+  	i.	With AWS Organizations, you can create Service Control Policies (SCPs) that centrally control AWS service use across multiple AWS accounts. You can specifically Allow or Deny individual AWS Services. For example you could deny the use of Kinesis or DynamoDB to your HR group within your AWS Organization. Even if IAM in that account allows it, SCP will overwrite it.
+  	ii.	Essentially you attach a policy to an organizational unit and every AWS accounts under that organizational unit will inherit that policy.
+  c.	Automate AWS Account Creation And Management
+    i.	You can use the AWS Organizations APIs to automate the creation and management of new AWS accounts. The Organizations APIs enable you to create new accounts programmatically, and to add the new accounts to a group. The policies attached to the group are automatically applied to the new account.
+  d.	Consolidate Billing Across Multiple AWS Accounts
+    i.	AWS Organizations enables you to set up a single payment method for all the AWS accounts in your organization through consolidated billing. With consolidated billing, you can see a combined view of charges incurred by all your accounts, as well as take advantage of pricing benefits from aggregated usage, such as volume discounts for Amazon EC2 and Amazon S3.
 
 If organization has setup multiple IAM users and the organization wants that each IAM user accesses the IAM console only within the organization and not from outside.
- Create an IAM policy with a condition which denies access when the IP address range is not from the organization.
+Create an IAM policy with a condition which denies access when the IP address range is not from the organization.
 
-What are Resource Groups?
+Q> What are Resource Groups?
 Resource groups make it easy to group your resources using the tags that are assigned to them. You can group resources that share one or more tags.
 Resource groups contain information such as;
-a.	a.	Region
-b.	b.	Name
-c.	c.	Health checks
+a.	Region
+b.	Name
+c.	Health checks
 Specific information
-a.	a.	For EC2- Public and Private IP addresses
-b.	b.	For ELB – Port Configurations
-c.	c.	For RDS – Database Engine, etc
+a.	For EC2- Public and Private IP addresses
+b.	For ELB – Port Configurations
+c.	For RDS – Database Engine, etc
 
 COST EXPLORER cost explores helps to explore and forecast cost.
-a.	a.	Use tags to tag your resources
-b.	b.	Configure tags for cost centres (such as by department, employee id, etc)
-c.	c.	Activate cost allocation tags to track your costs by tags
-d.	d.	Generates cost report in csv format
+a.	Use tags to tag your resources
+b.	Configure tags for cost centres (such as by department, employee id, etc)
+c.	Activate cost allocation tags to track your costs by tags
+d.	Generates cost report in csv format
 
 AWS Config
 AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
 Enables:
-a.	a.	Compliance auditing
-b.	b.	Security analysis
-c.	c.	Resource tracking
+a.	Compliance auditing
+b.	Security analysis
+c.	Resource tracking
 Provides:
-a.	a.	Configuration snapshots and logs config changes of AWS resources
-b.	b.	Automated compliance checking
+a.	Configuration snapshots and logs config changes of AWS resources
+b.	Automated compliance checking
 AWS Config stores everything inside S3 bucket. When any changes happen in the resources, it will send an event to AWS Config which will than send to AWS Config S3 Bucket.
 As soon as something changes it could trigger a lambda function or you could schedule the lambda function to constantly look through AWS Config settings and tell you something is compliant. AWS Config will send notification to SNS notify to the system administrator.
 Terminology
-a.	a.	Configuaration Items
-i.	i.	Point-in-time attributes of resource
-a.	b.	Configuration Snapshots
-i.     Collection of Config Items
-a.	c.	Configuration Stream
-i.  Stream of changed Config Items
-a.	d.	Configuration History
-i.	i.	Collection of config items for a resource over time
-a.	e.	Configuration Recorder
-i.	i.	The configuration of Config that records and stores config items inside s3. Logs config for account in region
-  What we can see in AWS Config:
-a.	a.	Resource Type
-b.	b.	Resource ID
-c.	c.	Compliance
-d.	d.	Timeline
-i.	i.	Configuration Details
-ii.	ii.	Relationships
-iii.	iii.	Changes
-iv.	iv.	CloudTrail Events
+a.	Configuaration Items
+ i.	Point-in-time attributes of resource
+b.	Configuration Snapshots
+ i.     Collection of Config Items
+c.	Configuration Stream
+ i.  Stream of changed Config Items
+d.	Configuration History
+ i.	Collection of config items for a resource over time
+e.	Configuration Recorder
+  i.	The configuration of Config that records and stores config items inside s3. Logs config for account in region
+
+What we can see in AWS Config:
+a.	Resource Type
+b.	Resource ID
+c.	Compliance
+d.	Timeline
+  i.	Configuration Details
+  ii.	Relationships
+	iii.	Changes
+	iv.	CloudTrail Events
 Note: config is regional
+
 AWS CloudWatch vs CloudTrail vs Config
-1.	1.	CloudWatch monitors performance
-2.	2.	CloudTrail monitors API calls in the AWS platform
-3.	3.	AWS Config records the state of your AWS environment and can notify you of changes.
+1.	CloudWatch monitors performance
+2.	CloudTrail monitors API calls in the AWS platform
+3.	AWS Config records the state of your AWS environment and can notify you of changes.
 
 While sending data in CloudWatch, timestamp can be upto 2 weeks in past and upto 2 hours in future.
 High-Resolution Metrics
@@ -151,15 +153,15 @@ aws cloudwatch put-metric-data --metric-name PageViewCount --namespace MyService
 # The aggregate data such as “sum of data”, “min value”, “max value” and “number of Data points”
 
 HEALTH DASHBOARDS
-Status.aws.amazon.com 1. Service health dashboards- shows the health of each AWS Service as a whole per region
+1. Status.aws.amazon.com 1. Service health dashboards- shows the health of each AWS Service as a whole per region
 2. Personal health dashboards – provides alerts and remediation guidance when AWS is experiencing events that may impact you
 https://phd.aws.amazon.com/
 
 Cloudwatch host level metrics consists of
-1.	1.	CPU
-2.	2.	Network
-3.	3.	Disk
-4.	4.	Status Check
+1.	CPU
+2.	Network
+3.	Disk
+4.	Status Check
 Anything outside of that is a custom metrics
 Custom metrics- minimum granularity is 1 minute
 You can retrieve data from any terminated EC2 or ELB instance after its termination. CloudWatch Logs by default are stored indefinitely.
@@ -170,10 +172,10 @@ Eg: aws cloudwatch put-metric-data - -namespace “Usage metrics” - -metric da
 
 KEY IOPS METRICS – you can burst up to 3000 IOPS. If you need more than 3000 but less than 10000 just increase the volume size. Anything over 10,000 IOPS move to PIOPS
 ELB MONITORING TYPES 4 Different Ways to Monitor Your Load Balancers;
-1.	1.	CloudWatch Metrics
-2.	2.	Access logs
-3.	3.	Request tracing
-4.	4.	CloudTrail logs
+1.	CloudWatch Metrics
+2.	Access logs
+3.	Request tracing
+4.	CloudTrail logs
 
 ELB connection draining
 To ensure that the classical load balancer stops sending requests to instances that are de-registered or unhealthy while keeping the existing connection open, use connection draining. This enables the load balancer to complete inflight requests made to instance that are de-registering or unhealthy.
@@ -189,10 +191,11 @@ Loadbalancer
 Spillovercount —> the total number of requests that were rejected because the surge queue is full.
 ELASTICACHE
 When it comes to monitoring our caching engines there are 4 important things to look at:
-1.	1.	CPU Utilization
-2.	2.	Swap Usage
-3.	3.	Evictions
-4.	4.	Concurrent Connections
+1.	CPU Utilization
+2.	Swap Usage
+3.	Evictions
+4.	Concurrent Connections
+
 # Use Elasticache offloading reads of DB for database query
 CloudWatch – Dashboards are multi-region and can display any widget to any region. To add the widget, change to the region that you need and then add the widget to the dashboard.
 Billing Alarms – You can create Billing Alarms to automatically alert you for when you go above a pre-defined cost that you set.
@@ -203,46 +206,46 @@ You can use resource groups with AWS Systems manager to automate tags.
 
 Placement Groups
 Note:
-1.	1.	By default, AWS places instances across different physical hardware.
-2.	2.	This minimizes the impact of a hardware failure
-3.	3.	Great approach for building resilient, highly available systems
-4.	4.	Not so great for low latency, high network throughput applications.
+1.	By default, AWS places instances across different physical hardware.
+2.	This minimizes the impact of a hardware failure
+3.	Great approach for building resilient, highly available systems
+4.	Not so great for low latency, high network throughput applications.
 
 Placement Group is the solution for this. There are three types of placement groups.
-1.	1.	Cluster Placement Group
+1.	Cluster Placement Group
 Instances are all created in a single AZ. (low latency and high packet network performance)
-1.	2.	Partition
+2.	Partition
 Instances are created in logical segments called partitions, each located in a separate rack(s), with independent network and power. Partition Placement Groups are described as large groups of instances where each group is placed on separate hardware.
-
-1.	3.	Spread
+3.	Spread
 Each instance is created in separate rack, with independent network and power. Recommended for applications that have a small number of critical instances that should be kept separate from each other
 
 
 STORAGE GATEWAY 
 Storage Gateway consists of an on-premise software appliance which connects with AWS cloud-based storage to give you a seamless and secure integration between your on-premises IT environment and AWS.
 Types of Storage Gateway
-1.	1.	File Gateway- uses NFS/SMB
-i.	i.	Files stored as objects in your S3 buckets
-ii.	ii.	Accessed using NFS or SMB mount point
+1	File Gateway- uses NFS/SMB
+  i.	Files stored as objects in your S3 buckets
+	ii.	Accessed using NFS or SMB mount point
 
-1.	2.	Volume Gateway – uses (iSCSI)
-a.	a.	Stored Volumes
-i.	i.	Store your all data locally and only backup to AWS
-ii.	ii.	Entire dataset stored on-site, backed-up to S3 as EBS Snapshots
-a.	b.	Cached Volumes
-i.	iii.	Use S3 as your primary storage and cache frequently accessed data in your Storage Gateway.
-ii.	iv.	Entire dataset stored in S3, only frequently accessed data cached on-site.
-1.	3.	Tape Gateway – uses VTL(Virtual tape library)
-i.	i.	Is a VTL which provides cost effective data archiving in the cloud using Glacier.
+2.	Volume Gateway – uses (iSCSI)
+  a.	Stored Volumes
+     i.	Store your all data locally and only backup to AWS
+ 	  ii.	Entire dataset stored on-site, backed-up to S3 as EBS Snapshots
+  b.	Cached Volumes
+    i. Use S3 as your primary storage and cache frequently accessed data in your Storage Gateway.
+    ii. Entire dataset stored in S3, only frequently accessed data cached on-site.
+3.	Tape Gateway – uses VTL(Virtual tape library)
+  i.	Is a VTL which provides cost effective data archiving in the cloud using Glacier.
 
 
-  EXAM NOTES:    
+EXAM NOTES:    
 
-1.	1.	Configuration Recorder
+1.	Configuration Recorder
 AWS Config uses Configuration Recorder to detect and capture changes for resources. When a Configuration Recorder is stopped or deleted, the configuration change trigger does not run while periodic triggers continue to run at a specified period.
 
-1.	2.	Aggregator to collect data using AWS Config
+# Aggregator to collect data using AWS Config
 For multi-account multi-region data aggregation. AWS Config uses aggregator to collect data from all account in various regions. Accounts which are not part of AWS Organization need to be individually added so that Aggregator can be authorized to collect data from these accounts.
+
 CloudFront
 Note: You might find it easier to use Amazon S3 bucket policies than object ACLs because you can add files to the bucket without updating permissions. However, ACLs give you more fine-grained control because you’re granting permissions on each individual file.
 When an Amazon S3 bucket is not configured as website endpoint. Origin access identity can be used to restrict access directly to S3 bucket. OAI is a special CloudFront user which is associated with your distribution. S3 bucket policy is modified to allow OAI and deny all other access. Users accessing files use this OAI to access content from S3 bucket and cannot directly able to access S3 content bypassing CloudFront
@@ -258,28 +261,28 @@ Cost and Usage report provides comprehensive cost details for all resources in A
 The Cost and Usage Reports is a .csv file or a collection of .csv files that is stored in an Amazon S3 bucket.
 
 CloudWatch
-1.	1.	Single Graph for multiple Metrics
+1.	Single Graph for multiple Metrics
 With Metric Math, you can create Amazon CloudWatch graphs querying multiple metric and display a new graph based upon math expression you required. This helps operational team to get a single graph for multiple metrics for AWS resources using math expressions.
-1.	2.	Metrics from multiple Regions
+2.	Metrics from multiple Regions
 To create a custom dashboard with metrics data from different regions, detailed monitoring is required to be enabled. Also, any IAM users which has permission to use PutMetricData and PutDashboard can create such customized dashboard.
 
 Consolidated Billing
 In case of consolidated billing, estimated charges for all services in all accounts can be viewed by logging in as paying account. 
 Cost Explorer
 With Cost Explorer, 2 types of Reserved Instance are generated
-1.	1.	RI Utilization Report: This reports utilization of RI instance in terms of RI purchased and RI used. This RI is compared with On-demand cost for same amount of utilization and provides Net savings for using RI. RI utilization reports do not help you to identify under-purchased RI instances.
-2.	2.	RI Coverage Report: This report how much hours of instance utilization are covered by RI and hours spend on On-demand instance. This also displays how much savings would have been if RI are used instead of On-demand instance.
+1.	RI Utilization Report: This reports utilization of RI instance in terms of RI purchased and RI used. This RI is compared with On-demand cost for same amount of utilization and provides Net savings for using RI. RI utilization reports do not help you to identify under-purchased RI instances.
+2.	RI Coverage Report: This report how much hours of instance utilization are covered by RI and hours spend on On-demand instance. This also displays how much savings would have been if RI are used instead of On-demand instance.
 Both reports can be saves in CSV format
 
 Health Check
 For ELB health check following can be configure
-1.	1.	Ping protocol
-2.	2.	Ping port
-3.	3.	Ping path
-4.	4.	Response timeout
-5.	5.	Healthcheck interval
-6.	6.	Unhealthy Threshold
-7.	7.	Healthy threshold
+1.	Ping protocol
+2.	Ping port
+3.	Ping path
+4.	Response timeout
+5.	Healthcheck interval
+6.	Unhealthy Threshold
+7.	Healthy threshold
 
 HealthCheck interval is time period between health checks performed at EC2 instance while Unhealthy. Threshold is number of consecutive failed health checks before ELB considers EC2 as unhealthy. To determine unhealthy EC2 instance immediately, HealthCheck interval should be minimum as 5 sec (valid Range from 5 to 300 sec) and unhealthy threshold should also be least i.e. 2 (valid range from 2 to 10).
 Amazon QuickSIght
@@ -301,9 +304,9 @@ You can use proactive approach for resource tagging to ensure all resources are 
 Reactive approach for tagging== resource groups tagging api, aws config rules, and custom scripts
 
 
-   Protocol to retrieve metrics
-1.	1.	Collectd -> is a protocol used to retrieve metrics from Linux servers
-2.	2.	Statsd-> is protocol to retrieve metrics with Windows Servers
+Protocol to retrieve metrics
+1.	Collectd -> is a protocol used to retrieve metrics from Linux servers
+2.	Statsd-> is protocol to retrieve metrics with Windows Servers
 We can use Amazon Cloud Watch agent with StatsD and Collectd protocol.
 
 Trusted advisor can be used to check usage details of AWS resources whether they are within the service limits for a resource.
@@ -315,18 +318,18 @@ Read Replica. If both Master and Read replica is part of the same region, encr
 AWS Inspector: for security assessment for applications deployed on EC2 instance.
 
 Features associated with Master account:
-1.	1.	Create an organization and organizational unit
-2.	2.	Invite an external account to join your organization
-3.	3.	Pay all charges accrued by all the accounts in its organization.
+1.	Create an organization and organizational unit
+2.	Invite an external account to join your organization
+3.	Pay all charges accrued by all the accounts in its organization.
 
 Use AWS inspector to scan the instances for vulnerabilities. The following are the rules packages available in Amazon Inspector
-1.	1.	Common Vulnerabilities and Exposures
-2.	2.	Center for Internet Security (CIS) Benchmarks
-3.	3.	Security Best Practices
-4.	4.	Runtime Behavior Analysis
+1.	Common Vulnerabilities and Exposures
+2.	Center for Internet Security (CIS) Benchmarks
+3.	Security Best Practices
+4.	Runtime Behavior Analysis
 
 
-    Note: Network Reachability package in amazon inspector helps to evaluate network configurations which can be used to identify potential risks in VPC. These package does not require and Amazon Inspector agent to be installed on EC2 instance. To automate these assessment checks, a CloudWatch event can be used which monitors changes to Security Group and Initiates Network Assessment using Network Reachability package.
+Note: Network Reachability package in amazon inspector helps to evaluate network configurations which can be used to identify potential risks in VPC. These package does not require and Amazon Inspector agent to be installed on EC2 instance. To automate these assessment checks, a CloudWatch event can be used which monitors changes to Security Group and Initiates Network Assessment using Network Reachability package.
 
 When an object is uploaded to Amazon S3 bucket, a header “x-amz-server-side-encryption” requesting aws:kms encryption is added to that object. To deny any user to upload unencrypted objects to S3 bucket, a bucket policy can be created which will check header and deny user permission from uploading if header is not present.
 
@@ -334,17 +337,16 @@ When an object is uploaded to Amazon S3 bucket, a header “x-amz-server-side-en
 1.	X-amz-server-side-encryption-customer-key
 2.	X-amz-server-side-encryption-customer-algorithm
 3.	X-amz-server-side-encryption-customer-key-MD5
-
 4.	But doesn’t include X-amz-server-side-encryption-customer-key-AES-256
 
 
 Iam: PassRole is the permission that controls which users can delegate IAM roles to an AWS resources. It ensures that users do not have additional permission to pass a role than a required minimum permission.
 
 Note: for replication from one bucket to bucket onto another region:
-1.	1.	The source and destination buckets must have versioning enabled
-2.	2.	The source and destination buckets must be in different AWS Regions
+1.	The source and destination buckets must have versioning enabled
+2.	The source and destination buckets must be in different AWS Regions
 Note: for storing server access logs,
-1.	1.	Source and target bucket should be separate bucket and should be created in the same AWS Region.
+1.	Source and target bucket should be separate bucket and should be created in the same AWS Region.
 
 AWS Artifact
 Provides on-demand downloads of AWS security and compliance documents, such as AWS ISO certifications, payment card industry(PCI), and Service Organization Control(SOC) reports.
@@ -420,9 +422,9 @@ Alias records provide a Route-53 specific extension to DNS functionality. Instea
 
 EFS:
 EFS Mount Targets can be accessed only on following systems,
-a.	a.	Amazon EC2 Instance in local VPC
-b.	b.	EC2 Instance in VPC having VPC peering with other VPC
-c.	c.	On-Premise servers having AWS Direct Connect or AWS VPN to Amazon VPC.
+a.	Amazon EC2 Instance in local VPC
+b.	EC2 Instance in VPC having VPC peering with other VPC
+c.	On-Premise servers having AWS Direct Connect or AWS VPN to Amazon VPC.
 
 Note: if the security team has received a list of black list IP address which are deemed as Spammers and want you to immediately block these IP address at the farthest point from cloud infrastructure.  In the Global level, create Web ACL, to block all IP address and apply it at edge level CloudFront.
 
@@ -438,18 +440,19 @@ AWS Data Pipeline  is a web service that you can use to automate the movement an
 Eg: ec2- copy log files- dailys3- copy log files weekly Amazon EMR
 
 If there is requirement to publish the metrics at an interval of 1 second from several devices onto Cloudwatch:
-1.	1.	Use the AWS CLI to publish custom metrics
-2.	2.	Publish metrics with high resolution
+1.	Use the AWS CLI to publish custom metrics
+2.	Publish metrics with high resolution
+
 The following are required attributes which needs to be present in SAML Assertion send to AWS STS
-1.	1.	Role
-2.	2.	Audience
-3.	3.	RoleSessionName
-4.	4.	NameID
+1.	Role
+2.	Audience
+3.	RoleSessionName
+4.	NameID
 Saml maximum sessionduration is 12 hours.
 You can ensure who has access to the keys in KMS services using Key Policies
 
 Enabling log file integrity in Cloudtrail
-•	⎝	To determine whether a log file was modified, deleted, or changed after CloudTrail delivered it, you can use CloudTrail log file integrity validataion.
+•	To determine whether a log file was modified, deleted, or changed after CloudTrail delivered it, you can use CloudTrail log file integrity validataion.
 Inline Policy
 Inline policy are useful if you want to maintain a strict one-to-one relationship between a policy and the principal entity that it’s applied to. For eg: you have a vendor that needs access to an aws resource in your company’s account. You create an AWS user account. You want to restrict access to the resource using [inline policy] for a brief period of time.
 
@@ -710,3 +713,5 @@ In an IAM policy, what action does IAM:PassRole relate to? [Select 2]
 
 FAQs for glacier: Check Glacier Vault and data retrieving policy
 ```
+
+### HAPPY LEARNING

@@ -12,7 +12,7 @@
   * Logging and Monitoring in AWS
   * Firewalls
   * Content Delivery
-  * How integrations
+  * How integrations among different native services works
 
 ## Storage
 ### Object level Storage
